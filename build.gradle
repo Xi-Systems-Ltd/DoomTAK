@@ -1,0 +1,10 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+ext {
+    compileSdkVersion = 21
+    buildToolsVersion = "29.0.3"
+}

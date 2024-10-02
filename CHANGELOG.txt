@@ -1,0 +1,1147 @@
+ATAK CIV 5.2.0.8 SDK f490acb (1726740902)
+
+ATAK-19404 Playstore Crash: NullPointerException AtakCertificateDatabaseBase.checkValidity
+ATAK-19360: [5.2] items are added to MapGroup after details are processed
+
+ATAK CIV 5.2.0.7 SDK ff16f10 (1726155949)
+
+ATAK-19273 Playstore Crash: com.atakmap.android.elev.h.onSourceAttached
+ENGINE-920 GLDrawingWidget doesn't clear callback when setting new drawable.
+ATAK-19389 9-Line fails to pull DTED in force DTED mode
+ATAK-19386 Playstore Crash: Playstore Crash: RecentlyAddedDropDownReceiver java.lang.IllegalStateException: The content of the adapter has changed
+
+ATAK CIV 5.2.0.6 SDK 1ca1202 (1725701075)
+
+ATAK-19368: Choice to update sources deferred to importer
+ATAK-19363: infinite recursion for item indicating self as parent
+ATAK-19273: Fix undefined behavior in elevation interop
+ATAK-19379 Lines show up as touchable in the Resectioning Tool
+ATAK-19374 Improve the Espresso Unit Test Harness for the S20
+ATAK-19373 Rubber Sheet fails to start drag for the same reason that ellipses did in ATAK-19344
+ATAK-19372 Friendly Ground markers get stretched to fill the the area in point details
+ATAK-19370 trigger fewer calls to setHeading for the self marker based
+ATAK-19366 Hotspot: Mocking for the radio should not remove the radio icon but rather hide it
+
+ATAK CIV 5.2.0.5 SDK bf5b44e (1724860329)
+
+ATAK-19341 Hotspot: Do not query resolution if no MilSymbols exist
+ATAK-19340 Name Threads to help with Profiling
+ATAK-19348 Received Ellipse creates multiple markers on map
+ATAK-19347 Adjusting start index when Lasso Tool tries to access externally added buttons
+ATAK-19355 Playstore Crash: java.lang.NullPointerException in MapEventDispatcher.dispatch
+do not launch the cable configuration when there is more than one radio
+ATAK-19357 Hotspot: GeoMagneticField Calendar.getInstance()
+ATAK-19364 Playstore Crash: NullPointerException TAKServerSender
+ATAK-19365 Playstore Crash: NullPointerException ImageDropDownReceiver
+ATAK-19344 Ellipse edit handles will not drag - only long press
+ATAK-19343 HotSpot: MapScaleDisplay Showing results in a 2-3 fps drop on the MPU 5
+
+ATAK CIV 5.2.0.4 SDK 13ee53d (1723970433)
+
+ATAK-19339 Playstore Crash: NullPointerException during AppMgmtPreferenceFragment.onPreferenceChange
+ATAK-8964 Laser Basket Measurements settings do not immediately take effect
+ATAK-19274: invalid access on GLGlobeBase::State::renderTiles::own()
+
+ATAK CIV 5.2.0.3 SDK ada4baf (1723965833)
+
+ATAK-19334 Metrics API final due outs
+ATAK-19326 Data Package / Video Plugins crash ATAK List Item crash
+ATAK-19329 Using SensorManager.SENSOR_DELAY_FASTEST is broken after upgrade...
+ATAK-19330 Playstore Crash: Class Cast Exception BloodhoundTool
+ATAK-19318 Network Monitor NullPointerException error
+ATAK-19317: prefer nominal resolution for reduced overhead
+ATAK-19246: suppress focus point queries unless center designator is visible
+
+
++ ATAK CIV 5.2.0.2 SDK 396087c (1723159143)
+
+ATAK-19298: Fix resource leaks in libcurlhttpclientbuilder
+ATAK-18982: resolve memory leaks and unnecessary native heap retention identified during Data Package/KMZ import
+ATAK-19251 Support for Latvia FMS case (plugins)
+ATAK-19312 ANRs during startup using the SDK but not when using release
+ATAK-19297 Request from Persistent System to disable globe mode rendering on the RDU
+ATAK-19263 ICU needs to have the ability to accept configure the buffer time for the outgoing SA message
+ATAK-19306 Playstore Crash: NullPointerException MilSymManager
+ATAK-19302 Disable Link EUD feature does not evict all of the resources gathered
+
+
++ ATAK CIV 5.2.0.1 SDK 130fc19 (1722374847)
+
+ATAK-19276 Playstore Crash: NullPointerException MapItem compare...
+ATAK-19089: mitigate dramatic zoom out when manipulating the map while in self-marker lock
+ATAK-19269 Opening buffered video always fails when temp directory exhausts number of files
+ATAK-19275 Playstore Crash: FileNotFoundException VNS
+ATAK-19272 Playstore Crash: LayersManager java.lang.StackOverflowError
+ATAK-19271 User Submission: NullPointerException in OM-Refresh
+ATAK-19268 MilSymManager IllegalStateException
+ATAK-19265 Settings description for Dex controls and Globe mode are mix/missing
+ATAK-19259: Recognize geopdfs that are multi-page or image-tagged
+allow for simplified preference key generation
+ATAK-19128 MGRS /UTMCoordinate Entry Pane Displays Empty Raw Entry Field But Allows Point Commit
+
++ ATAK CIV 5.2.0.0 SDK b191b65 (1721431182)
+
+TAKX-2642 Add stars rendering
+ATAK-18170 Allow user to configure behavior for Pull Elevation during coordinate entry
+ATAK-19023 Enhance metrics API based on suggestive tips from AI/ML developers
+ATAK-18964 Streaming elevation data
+ATAK-18280 Map View Mirroring Briefing Tool  - Remote Control Plugin
+ATAK-18274: ATAK Peripherals Fixes (improved classic bluetooth support, added additional serial gps devices)
+ATAK-19111 JFIRE 2023 Ordnance Update
+ATAK-18906 Allow for drawing lines to be extended during editing by tapping the map  drawing_shape.mp4
+ATAK-19115 RedX and Point Dropper Need a preference for what elevation to pull (dted vs other)
+ATAK-18989 Enable ABI backwards compatibility for system plugins
+ATAK-18958 Support MVT files with the spec suggested mvt extension using_vector_tiles.mp4
+ATAK-18892 QR code support for setting preferences, enrolling to a server, and downloading data
+
++ ATAK CIV MASTER SDK 3c39942 (1719228825)
+
++ ATAK CIV MASTER SDK 345cb03 (1720993574)
+
++ ATAK CIV 5.2.0.UAT SDK d609cff (1719754831)
+
++ ATAK CIV MASTER SDK d03258c (1718292810)
+
++ ATAK CIV MASTER SDK 6ba2b47 (1717725474)
+
++ ATAK CIV MASTER SDK 6ade6ad (1716439239)
+
++ ATAK CIV MASTER SDK e6098b6 (1714490215)
+
++ ATAK CIV MASTER SDK 56e3595 (1713041023)
+
++ ATAK CIV 5.1.0.6 SDK 6265d91 (1712260026)
+
+ATAK-18078: support equirectangular tiled imagery
+Update the documentation for the MDM entry
+allow caller to specify protocol in connection string for Quick Connect
+ATAK-18892 QR code enrollment should prompt prior to performing enrollment.
+ATAK-17919: gx:coord uses space delimiter per KML specification
+ATAK-18890 Importing of a large geotiff in datasync causes oom
+ATAK-18875 Playstore Crash: ConcurrentModificationException while updating progress
+
++ ATAK CIV 5.1.0.5 SDK cd487b1 (1712071360)
+
+Fix for Android 14 with Pending Intent
+
++ ATAK CIV 5.1.0.4 SDK 402e4cf (1712063462)
+
+ATAK-18885 Playstore Crash: NullPointerException reportGpsBack
+networkmonitor application update to 5.0.0.11
+move app restrictions under the application
+
++ ATAK CIV 5.1.0.3 SDK af9bbee (1711737395)
+
+Fix for Sticky Hash Tags
+
++ ATAK CIV 5.1.0.2 SDK bb30a92 (1711714733)
+
+ATAK-18877 Playstore Crash: com.atakmap.app.ATAKActivity.onRequestPermissionsResult java.lang.StackOverflowError
+ATAK-18874 Playstore Crash: IllegalArgumentException: Attribute key not found: 'Speed'
+ATAK-18876 Playstore Crash: com.atakmap.android.viewshed.ViewshedDropDownReceiver.onPointChanged
+
++ ATAK CIV 5.1.0.1 SDK 6dccb52 (1711477668)
+
+ATAK-18868 Preference to disable TAK Server connection when the VPN is down
+ATAK-18857 Support a tak:// scheme for launching ATAK
+ATAK-18856 Enhanced Depth Perception off by default
+VNS-58 - Fixing Rerouting Task Within VNS/Route Planners
+
++ ATAK CIV 5.1.0.0 SDK 1fab0cc (1710957707)
+
++ ATAK CIV 5.1.0.RC7 SDK 8ddf62e (1710789120)
+
++ ATAK CIV 5.1.0.RC3 SDK 7db5713 (1710488747)
+
++ ATAK CIV 5.1.0.RC2 SDK f60487e (1710279826)
+
++ ATAK CIV 5.1.0.RC SDK 16ad035 (1710024687)
+
++ ATAK CIV 5.1.0.UAT SDK 73f9511 (1709510289)
+
++ ATAK CIV 5.1.0.BETA SDK db84ed1 (1708916662)
+
++ ATAK CIV 5.0.0.FF2 SDK e3b3794 (1708438150)
+
++ ATAK CIV 5.1.0.FF SDK 6f11f57 (1708147133)
+
++ ATAK CIV MASTER SDK acd088a (1707520312)
+
++ ATAK CIV MASTER SDK b21fad5 (1707055256)
+
++ ATAK CIV MASTER SDK 160fc28 (1706033888)
+
++ ATAK CIV MASTER SDK 14be7e9 (1704392880)
+
++ ATAK CIV MASTER SDK b9b13b3 (1702492356)
+
++ ATAK CIV 5.0.0.RC SDK ba79946 (1700198956)
+
++ ATAK CIV 5.0.0.UAT SDK d7f3ea7 (1699672842)
+
++ ATAK CIV 5.0.0.BETA SDK 40fbff5 (1699529139)
+
++ ATAK CIV 5.0.0.BETA SDK bd49a20 (1699477822)
+
++ ATAK CIV 5.0.0.BETA SDK 7f78ca9 (1699441794)
+
++ ATAK CIV MASTER SDK b06755f (1698517169)
+
++ ATAK CIV MASTER SDK c80cca5 (1690145599)
+
++ ATAK CIV MASTER SDK 2326a99 (1689551176)
+
++ ATAK CIV MASTER SDK 4e96e59 (1689027602)
+
++ ATAK CIV MASTER SDK e1fd060 (1688322631)
+
++ ATAK CIV MASTER SDK a529334 (1687612311)
+
++ ATAK CIV MASTER SDK a3b538e (1686963065)
+
++ ATAK CIV MASTER SDK 4f944bd (1686334122)
+
++ ATAK CIV MASTER SDK eb4957d (1685565567)
+
++ migration to takkernel@4.1 which removed deprecated methods
+
++ ATAK CIV MASTER SDK 045c52c (1685185246)
+
++ ATAK CIV MASTER SDK e393945 (1683919852)
+
++ ATAK CIV MASTER SDK 63967c4 (1682617538)
+
++ ATAK CIV MASTER SDK fcba3dc (1681920265)
+
++ ATAK CIV 4.9.0.0 SDK 5530e38 (1679522601)
+
++ finalized build
+
++ ATAK CIV 4.9.0 UAT SDK bd8cc2a (1678042335)
+
++ ATAK-17400 correct editability with the route control points
++ ATAK-17370 + allow for toggling of the mass visibility for Image Overlays
++ Bring all libraries up to NDK 25B
++ Free Fly capability
++ Removal of transapps libraires
++ Internationalization for ParseUtils
++ Stroke and Transparency for Routes
+
+
++ ATAK CIV 4.9.0.DEV ALPHA SDK 97547a6 (1676416706)
+
++ ATAK CIV 4.9.0.DEV ALPHA SDK 28d1960 (1676064170)
+
++ ATAK CIV 4.9.0.DEV ALPHA SDK 7c2ee94 (1675519686)
+
++ ATAK CIV 4.8.1.5 SDK 475f848f (1675356844)
+
++ corrects upgrade issue from versions of ATAK < 4.7.0.0
+
++ ATAK CIV 4.8.1.4 SDK 862de8d8 (1675107388)
+
++ address startup time massive regression from 4.6->4.7+ on older devices Database::open
++ address possible crash from RouteCreationDialog when lookup fails
++ move toasts and and dialog shows to the appropriate activity when installing plugins
++ allow for reading of the xml option to allow for expiring or non-expiring credentials
+
++ ATAK CIV 4.8.1.3 SDK 5b10c8fe (1674518893)
+
++ correct arrow styling implementation to honor plugin request for dashed arrows
++ allow for the tak version information to be disabled in SA messages 
+
++ ATAK CIV 4.8.1.2 SDK bb2e294c (1674302747)
+
++ RouteCreationDialog does not fallback gracefully when in airplane mode          
++ protect against a case where ProgressDialog is nullified during the construction occurring on the UI thread during data package construction
++ Bloodhound tool leaks rerouting threads when using a route planner
++ prevent double initialization of the main application view during startup
++ restore the action bar in the serial monitor
++ do not toggle visibility on things that are not in the filter list - ie a user manually toggles visibility of a few shapes (OFF) and quits out a ATAK.   I as a user would like to see those shapes remain toggled off
+
++ ATAK CIV 4.8.1.1 SDK 64ae58ca (1674086306)
+
++ ATAK-16961: Update commo to 1.7.2 to pick up more compatible enrollment CA p12 format.
++ Location added to the map as soon as GPS is detected
++ clean up log spew about null pointer during fire tools clean up
++ restore legacy night vision behavior
+
++ ATAK CIV 4.8.1.0 SDK 1d86897f (1673794673)
+
++ fix for placing points in highly cluttered areas
++ fix for lag in highly cluttered areas (labels)
+
++ ATAK CIV 4.8.1 Release Candidate SDK f06dc2c (1672924949)
+
++ ATAK CIV 4.8.1 Release Candidate SDK f06dc2c (1672924949)
+
++ fix blinking with text rendering
+
++ ATAK CIV 4.8.1 Release Candidate SDK 49e8a2a (1672519244) HIGHLY RECOMMENDED
+
++ refactor logic for efficient use of _all DTED_ optimization
++ correct extended landscape number calculation to make use of the actual room available
++ better explain the exception when it occurs (previously just threw a NPE, now throws an IllegalStateException
++ mark FilteredContactsDatabase as not a finding and exclude addtional subdirectories
++ danger close calculation using a deepFind that is distance constrained
++ correct the issue with the bullseye export and label only export
++ change to make it so that all three options are available via the long press on the pairing line to self (pairing line to self, bullseye, compass)
++ construct a SystemPluginValidator for double signed apks from the playstore
++ api for a more flexible goto tool
++ correct bullseye deficiencies
++ various fires changes to support the Marine Corp
++ various fixes for translation
++ removed long since deprecated methods
+
++ ATAK CIV 4.8.1 BETA SDK 78f3b4a (1671892460)
+
++ cut of development master 
+
++ ATAK CIV 4.8.1 BETA SDK e8f67e5 (1671825303)
+
++ cut of development master 
+
++ ATAK CIV 4.8.1 BETA SDK e4590c3 (1671732998)
+
++ cut of development master 
+
++ ATAK CIV 4.8.1 BETA SDK 7ba88ac (1671072131)
+
++ cut of development master 
+
++ ATAK CIV 4.8.1 ALPHA SDK 48a5fdd (1670525156)
+
++ cut of development master 
+
++ ATAK CIV 4.8.1 ALPHA SDK 58a1bb7 (1670069211)
+
++ cut of development master 
+
++ ATAK CIV MASTER DEVELOPMENT SDK 451c790 (1669217117)
+
++ cut of development master 
+
++ ATAK CIV 4.8.0.0 SDK 0a1ea43 (1668790670)
+
++ takkenrel@3.5.1
++ finalized build
+
++ ATAK CIV 4.8.0 UAT2 SDK a49ed0b (1668561484)
+
++ takkernel@3.4.2
++ 4.8.0 Change Log
++ correction to bullseye when zooming out, hides the labels correctly
++ range and bearing arrows no longer become detached
++ correct synchronization issue when destroying video
+
++ ATAK CIV 4.8 UAT SDK 8c5ebf2 (1667746673)
+
++ takkengine@3.3.8
++ CoT 2525C Palette Improvements
++ augment the current password change to allow for both password match
++ fix GPS rollover issue
++ Compensate For Focus Point Changes on Target Bubble Rendering
++ fix JNI `NewStringUTF` crash and several observed deficiencies with sample KML
+
+
+
++ ATAK CIV 4.8 FF2 SDK 3075532 (1666777026)
+
++ takkengine@3.1.2
+
++ ATAK CIV 4.8 ALPHA SDK 6ab8880 (1665684756)
+
++ migrate the espresso testing framework forward
+
++ ATAK CIV 4.8 ALPHA SDK cdbfc7f (1664925766)
+
++ fix proguard issues for release/sdk builds
+
++ ATAK CIV 4.8 ALPHA SDK 4bb59b0 (1664878369)
+
++ roll the api to 4.8 since there will not be a 4.7.1
+
++ ATAK CIV 4.7.1/4.8 ALPHA SDK 37becb6 (1664712438)
+
++ provide a sneak peak at 4.8
+
++ ATAK CIV 4.7.1/4.8 ALPHA SDK 44b4853 (1663889241)
+
++ provide a sneak peak at 4.8 with attention to the changes listed here https://wiki.tak.gov/pages/viewpage.action?pageId=66588387
+  - core updated library offerings (androidx.core:core:1.8.0 is a transient inclusion)
+      * implementation 'androidx.fragment:fragment:1.5.2'
+      * implementation 'androidx.exifinterface:exifinterface:1.3.3'
+      * implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+      * implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+
++ ATAK CIV 4.7.1/4.8.0 ALPHA SDK dbb9c66 (1663373989)
+
++ provide a sneak peak at 4.8
+
++ ATAK CIV 4.7.1 ALPHA SDK 373e54e (1662770938)
+
++ provide a sneak peak at 4.8
+
++ ATAK CIV 4.7.0.0 SDK 2630c52 (1658845578)
+
++ address a NullPointerException without a stack trace that was provided via google play
++ allow for the selectedImageURI to be specified when passing in a UID in the gallery display
++ for the purpose of the floating action bar - revert back to the original toolbar close button
+
+
++ ATAK CIV 4.7.0 UAT SDK 1788a6a (1657933415)
+
++ update to the latest bundled tools
++ migrate to takengine@2.0 addressing CVEs in supporting 3rd party libraries
++ support for URL links within CoT messages
++ fix issue with degenerate polygones
+
+
++ ATAK CIV 4.7 FF SDK 0330a82 (1656168214)
+
++ allow for plugins to upload logs
++ update to the latest network monitor
++ allow for a user to override the maximum file size when sending mission packages
++ font rendering fix for certain tablets and emulators
+
++ ATAK CIV 4.7.0 ALPHA SDK 574233b (1655904624)
+
++ protect against a NullPointer possibility during a crash chain
++ JumpMasterBridge update
++ Heat Map overlay disabled after relaunching ATAK #193
++ protect against an illegal argument as reported on the playstore without steps
++ use the newer icons as appropriate
++ add the ability to specify the type of network connection setting to jump to with the NETWORK SETTINGS intent
++ address http usage where https is appropriate
++ Refactored Contacts to use takkernel Contacts API
+
++ ATAK CIV 4.7.0 ALPHA SDK 94f260f (1653679873)
+
++ map engine migration for faster loading
+
++ ATAK CIV 4.6.1.1 SDK 0915a75c (1652433556)
+
++ Network Monitor 4.6.1.1 include the new Network Monitor with support for the Microhard Radio
++ NullPointerException CrumbDatabase when switching between release and development
++ Manifest Maker not able to retrieve plans from TAK Server due to CoT Parsing change to support UTF-8 chars, additional fix required.
++ Java GLQuadTileNode4 simultaneously renders multiple tiles during tile reload causing flickering
++ Rectangle edges are missing line strokes when extruded.
++ reference takkernel@1.10.9 which resolves the GeomagneticField computation issue
++ reference takkernel@1.10.8 which restores proper ATAKFileIOProvider registration
++ include the new ICU with the TTL preference
++ Fix badly built/corrupt data package loading to deal with even more badly built/corrupt datapackages
+
++ ATAK CIV 4.6.1.0 SDK aa325ffe (1651719244)
+
++ migrate to takkernel@1.10.5
++ correct NetworkMonitorLite to correctly construct the network device based on the configuration
++ support broken data packages zipped on windows devices where the package contents is in a sub-folder
++ correct issue with Track History server history search
++ add a preference to turn on rapid MGRS entry when long pressing to drop points
+
++ ATAK CIV 4.6.1.RC SDK bd41372 (1650890115)
+
++ ATAK-16123: only allow smooth pan over poles when user orientation is enabled
++ ATAK-16089: by allowing for post import of new iconsets over the existing iconset database
++ migrate to takkernel@1.7.0
++ Update openssl usages by commo and video libraries
++ Cryllic GeoChat does not have spaces preserved
++ follow the altutide unit preference for the display and entry of the height
++ enable the CoT type picker in the civilian builds
+
+
++ ATAK CIV 4.6.0.1 SDK 5fd5c04 (1648737450)
+
++ handle the case where the RerouteDialog can throw an IllegalStateException (playstore)
++ follow the altitude unit preference for the display and entry of the height in viewshed screens
++ encode and decode unicode representation for the basic XML escaped values so invalid characters in the preferences file will not cause issues (xml values that would need to be escaped) 
++ correctly pad with zeros and only return the number if it is negative
+
++ ATAK CIV 4.6.0.0 (final) SDK ee2470c (1648479632)
+
++ see https://wiki.tak.gov/display/DEV/Supplemental+Change+Log+for+ATAK
+
++ ATAK CIV 4.6.0 UAT SDK f5a4570 (1647389806)
+
++ ATAK CIV 4.6.0 Feature Freeze 2 SDK 610ccbc (1646936050)
+
++ ATAK CIV 4.6.0 Feature Freeze SDK 9f5e4bf (1645098603)
+
++ ATAK CIV 4.6 ALPHA SDK 80d6f61 (1643232966)
+
++ continue to remove deprecated api
+
++ ATAK CIV 4.6 ALPHA SDK 63b8982 (1642198084)
+
++ alpha work in progress api marked as 4.6.0.DEV
++ address memory issues with Android 12
+
++ ATAK CIV 4.6 ALPHA SDK fd42afa (1641848872)
+
++ alpha work progress for 4.6 (api still marked as 4.5.1.DEV)
+
++ ATAK CIV 4.5.1.0 SDK e60ee012 (1640828535)
+
++ Left Right Switch for the overflow button
++ Allow for sorting of IP's
++ Additional Drawing and Line Capabilities
++ Allow for Inner Signing of Plugins to allow for third party developers make use of aab submission to the play store.
++ Augment Feature Editing
++ Fix performance issue with Bread crumbs
++ Optional lower bar for the Self Widget Information
++ use the correct keyboard when setting minimum safe distance for shapes
+
+
++ ATAK CIV 4.5.0.1 SDK 475fd6f (1637778272)
+
++ Playstore fix crash with allowed null preference key which is now allowed in Android 11 and used when SharedPreference::editor::clear is called.
++ Playstore fix  call the correct super method when sending a TAK client parameters mission package.
++ Common commo correctly recovers in specific low level cases involving open ssl library usage. 
+
++ ATAK CIV 4.5.0.0 SDK ee22225 (1637608035)
+
++ rtmp url with a token query fails when opened as a videoURL
++ null check instance access when starting up after freelook in enabled
++ move the toolbar up or down depending on the nav toggle state
+
++ ATAK CIV 4.5.0.RC1 SDK ef54f18 (1637355223)
+
++ turn on illumination feature for the earth
++ turn on ellipse drawing 
++ fix for KML with missing latitude and longitude
++ fix issue with converting range values for Range and Bearing circles
++ never use the default certificate if using enrollment
++ honor kml default visibility
+
++ ATAK CIV 4.5 UAT SDK aad9fd7 (1636198850)
+
++ ability to toggle support for external devices such as laser range finders
++ fix overlay application exported from TAK GeoCam
++ Fix default spinner dialog so that the font by default is white not black
++ mark a soft exception for now when passing in the wrong information for Range And Bear arrow units
++ correctly support u-d-c-e type (ellipses)
+
+
++ ATAK CIV 4.5 BETA SDK f2cfcad (1635987663)
+
++ BETA for 4.5
+
++ ATAK CIV 4.5 Feature Freeze SDK 03678f1 (1634946303)
+
++ feature freeze for 4.5 with API bump
+
++ ATAK ALPHA 4.5 DEV SDK 07630a75 (1630503464)  
+
++ alpha work progress for 4.5 (api still marked as 4.4)
+
++ ATAK CIV SDK 4.4.0.5 d995387 (1630418122)
+
++ fix case where extensions have not been set, assume wildcard *
+
++ ATAK CIV 4.4.0.4 SDK 1500a4a (1629298096)
+
++ correction to allow for Network Monitor to handle detection of 2 PRC 163/167's.
+
++ ATAK CIV 4.4.0.3 SDK 521e5e9 (1629028772)
+
++ address  hit back button in Import Manager to navigate up to "/storage". Note now no child directories or files listed
++ Update video libraries to 20210812 Addresses issue outlined in WTK-2968
++ in the case of distance or zAngle being NaN, toast and do not continue
++ fix logic for wildcard searches where wildcard character is not first or last
++ protect against the posibility that the MapRenderer3 can be null
+
+
++ ATAK CIV 4.4.0.2 SDK 6ee8ee1c (1628697706)
+
++ only allow for text entry without newlines during callsign entry
++ fix tile query issues with imagery capture for GRG Builder and other plugins
++ break out and allow the port to be specified during enrollment, fixing a hard crash
++ toggle the channels checkbox when the user clicks anywhere in the list item
++ vehicle model load failsafe where if the vehicle is 0 length file, it will reload it from the apk
++ fix occasional NPE when hit testing rubber models
+
+
++ ATAK CIV 4.4.0.1 SDK 82fa3342 (1628256795)
+
++ fix chat receipts showing up as chat messages in older version of ATAK
+
++ ATAK CIV 4.4.0.0 SDK 4a614a1c (1627945715)
+
++ implement simple URI encode/decode to allow paths with spaces to pass URI construction and relative path resolve on all URIs; preserve fallthrough path for error conditions
++ DTED bulk download better feedback
++ skip meshes with 0 vertices + updated `libtakengine` that returns empty array on empty meshes
++ GRG w/ 3D model and no other vector elements skips model import
++  handle streaming vs local URIs separately when trying to append query params + allow one level of recursion when searching for `tileset.json` in zip files
++ use proper metadata key for clamp button with Routes
++ do not deconflict when an item's shape UID points to the item itself (fixes touching two routes close together)
++ fix NullPointerException when processing a video xml link from a mission package
++ fix Selecting zipped Shape files in feed leads to crash
++ address Playstore crash log involving an IndexOutOfBoundsException
+
++ ATAK CIV 4.4.0.0 RC SDK 156bdcd1 (1627326891)
+
++ in case we receive a new LZ location while the casevac is open, just set the point and do not create a new one.
++ build image markup with the latest fixes
++ do not select map sources by default when using lasso and do not include invisible overlays in lasso selection
++ upgrade the icu to properly set up the cot message / video alias
++ reduce mesh raycasts during hit-testing
++ perform a null pointer check on fill style
++ catch a class cast exception and attempt to log what the actual field type was
++ use stdcharset directly, do not look it up
++ move method higher up in the class hierarchy to account for the fact that Polylines can have a length
+
+
++ ATAK CIV 4.0 UAT SDK 24d27fbd (1626531638)
+
++ ensure that only one instance of the channels alert dialog is displayed at a time
++ fix: spotmap marker isn't persisted when swapping to another spotmap details
++ move the map item visibility check to AttachmentGalleryProvider 
++ Add listeners to all routes, not just flying, and then remove them from all routes to match
++ make sure dog house isn't null before calling register
++ ATAK-15078: populate `z` bounds on `GLMapItem2` for frustum culling
++ recalc the egress line when the point moves.   
++ Allow video overlays to be auto-removed when video player is closed
++ java doc fixes and extraction of a common area within an if statement
++ make `checkConnectivity` and `authFailed` atomic and do away with `synchronized` access on those fields to allow concurrent access
++ Fix blank drop-down issue
++ added in the command line used to shrink pdf's for tak consumption
++ update user manual and change log
++ move file date under the file name when using import manager in portrait mode to better utilize screen space
+
+
++ ATAK CIV SDK 4.4 Feature Freeze 158e3542 (1625526425)
+
++ image capture fix for use by plugins. 
++ associate a cert with a port when saving after enrollment
++ allow for users to specify the tile refresh interval for WMS soutces
++ fix bullseye KML/KMZ export
++ fix usage of metaDouble for resectioning "landmarkBearing" instead of "bearing"
++ flavor bump to match the API bump to 4.4.0
++ only display Cancel/Retry buttons for enrollment errors when using Quick Connect
++ do not persist the multi-polyline every time a line is added 
++ remove unused intent when deleting lines (never worked due to typo; doesn't seem necessary anyway)
+
+
++ ATAK-15010 FAH and Laser Basket distance setting displays path/file name as dialog
+
++ ATAK CIV 4.4 Feature Freeze SDK 0ce03c90 (1624729342)
+
++ Feature Freeze
+
++ ATAK CIV 4.4 ALPHA SDK d632a48b (1624477599)
+
++ removal of 4.4 deprecated capabilities
+
++ ATAK CIV 4.4 ALPHA SDK 4352fa96 (1623971680)
+
++ removal of 4.4 deprecated capabilities
+
++ ATAK CIV 4.4 ALPHA SDK 9b38823d (1623844351)
+
++ removal of 4.4 deprecated capabilities
+
+
++ ATAK CIV 4.4 ALPHA SDK 9b0ee71c (1622201827)
+
++ toggling KML Network Link visibility affects visibility of other network links
++ fix MCIA GRG overlay list model + fix a bunch of external NPEs related to bringing this overlay back from the dead
++ have FeatureSetHierarchyListItem extend AbstractHierarchyListItem2 
++ utilize getExtraView(View existing, ViewGroup parent) for better performance 
++ remove FeatureSetHierarchyListItem checks in HierarchyListAdapter since they're not longer needed
++ fix polyline hit testing in high altitude areas
+
+
++ ATAK CIV 4.4 ALPHA SDK c6e81edb (1621533251)
+
++ retains the old build api for now - switch will occur at feature freeze
+
++ ATAK CIV 4.4 ALPHA SDK 80a75d15 (1620754198)
+
++ retains the old build api for now - switch will occur at feature freeze
++ Removal of the deprecated Rings class
++ doghouse fixes
++ Handle several errors in the video-on-map overlay If not using a projection and generating less vertices,
++ ATAK-14843: Hit testing inaccurate at higher altitudes
+
++ ATAK CIV 4.3.1.0 SDK ac618212 (1619726962)
+
++ ability to turn on or off lollipops
++ turn off enhanced depth perception mode 
+
++ ATAK CIV 4.3.1 BETA2 SDK 887b645 (1619030628)
+
++ correct issues with strings found during translation to Japanese
++ migrate the name of the directory for the icons from the incorrect mil-std-2525b to mil-std-2525c
++ avoid leak of local reference in Java/JNI VSI layer's seek implementation
++ preliminary capability - ability to modify the styling of features
+
+
++ ATAK CIV 4.3.1 BETA SDK 3e3fb65 (1618415034)
+
++  migration to Label Manager
++  make sure to resize the text widget if needed when the bloodhound is started
++  migrate over fix for GlArrow2 so that the association arrow is not render sub-terrain when no altitude/elevation is present
++  correct issue with countries using translation for All Chat Room
++  correct issue with FAH being clipped incorrectly in areas greater than 90 degree longitude.
+
++ ATAK CIV 4.3.0.2 SDK c344053b (1617391897)
+
++ fix fillColor for Polylines sent by external systems
++ add in elevation downloading
+
++ ATAK CIV 4.3.0.0 SDK 5f0cf676 (1616638381)
+
++ final sdk for 4.3.0.0
+
++ ATAK CIV 4.3 Release Candidate 5 SDK ff2863b3 (1616543607)
+
++ refactor geometry update into separate method + track if any points are interpreted as AGL (interpret `NaN` HAE as 0AGL)
++ convert AGL to HAE for line and label geometry + invalidate geometries on terrain update if any points AGL
++ Rendering regression with Track Arrows / Lines and Dashes + fix auto-focus when height is NaN
++ support dashed and dotted lines for Circles and Rectanges at a programatic level
+
++ ATAK CIV 4.3.0 Release Candidate 3 SDK 7312c69e (1616159115)
+
++ Fix momentary center when driving and using pinch zoom
++ GDAL does not load properly when encryption is enabled
++ Bullseye direction arrow is disassociated from the bullseye in nadir view
++ Rebuild of the Image Markup tool
++ Reduce synchronization in EditablePolyline
++ Cesium Tiles Support now recognizes the .3tz extension
++ Fix for ANR when Sensor FOV is updated
++ Fix for metric logging
+
++ ATAK CIV 4.3.0 Release Candidate 2 SDK 238da05 (1616023091)
+
++ various rendering fixes for both rendering at NADIR as well as at tilt
++ video libraries now support urls with username and password set as part of the url
++ metric recording fixes
+
++ ATAK CIV 4.3.0 Release Candidate SDK 084e4e1 (1615681833)
+
++ various rendering fixes for both rendering at NADIR as well as at tilt
+
++ ATAK CIV 4.3.0 BETA SDK e6e5555 (1614991542)
+
++ camera fixes for improved rendering experience
++ fix to the lasso tool
++ documentation updates for 4.3.0
++ final addition of models
++ updated wildfire iconset
++ drop down fixes to allow for full screen drop downs
++ better user experience for wms/wmts servers when a 401/403 condition occurs
+
++ ATAK CIV 4.3 Feature Freeze SDK 8d33a42 (1613996613)
+
++ Upgrade for the globe surface renderer
++ Build tool upgrade (Gradle 6.8.1 and Android Gradle Plugin 4.0.2)
++ Encryption System Plugin Async Callback
++ Android 11 Support for SD cards
++ Android 11 Support GPS when ATAK is in the background
++ Fix for Submenu button span calculation
++ GeoPDF vs PDF corrections
++ produce a unique applicationId for each flavor as to remove colisions in the Enterprise (private) playstore.
++ upgrade to supply  androidx.exifinterface:exifinterface:1.3.2
++ font scale use 1 not 100 for the default
++ ATAK-13925: Selecting R&B line showing unexpected elevation with DTED installed
++ updated MissionPackageReceiver to not trigger on files that are being moved
++ ATAK-14358: IllegalStateException when rendering model icon
++ ATAK-14331: Fix incorrect ZIP output stream closure
+
+
++ ATAK CIV 4.2.1.7 SDK b8b4723 (1612956856)
+
++ font size fix for features
+
++ ATAK CIV 4.2.1.5 SDK 42b59a6 (1612535009)
+
++ ATAK-14366 so that the upgrade path is correctly triggered
+
++ ATAK CIV 4.2.1.4 SDK 9a51f932 (1612447987)
+
++ ATAK-14358: IllegalStateException when rendering model icon
++ ATAK-14340: Text prompt for lasso is inaccurate
+
+
++ ATAK CIV 4.2.1.2 SDK 5b19fa3b (1611971515)
+
++ Critical fix for 3D rendering 
++ Fix for EULA display
+
+
++ ATAK CIV 4.2.1.0 SDK 98b42486 (1611597162)
+
++ BP/HA fix
++ Settings Type (takserver is a reliable connection)
++ fix draw order for sprites to properly handle potential for alpha writing to depth buffer
++ add in danger close styler
++ Add label stretch and icon scaling to creation calls for LabelPointStyle and IconPointStyle, respectively
+
++ ATAK CIV 4.2.1 BETA SDK c5a1400 (1610146973)
+
++ Distribution A Statement in all helper apps
++ New 3-D models 
++ Correct sluggish behavior with large shapes 
++ Fix FileSystemUtils.unzip
+
++ ATAK 4.2.1 DEVELOPMENT CIV SDK 4d92f80 (1608746614)
+
++ Bug fixes and minor API changes
+
++ ATAK CIV 4.2.0.1 SDK 38c62f0 (1606262829)
+
++ Finalized 4.2.0 
++ Fix for running on a MPU5
++ Fix for 3-D models
+
++ ATAK CIV 4.2 UAT SDK c0efb9a (1605231310)
+
++ Fix for DataDroid requests being executed twice
++ Fix Doghouses failing to render
++ Fix Imported Files upgrade path from 4.1.0 to 4.1.1 and 4.2
++ Protect OOM from XMLDataSetDescriptorSpi
++ fix performance regression with file overlays line rendering
++ Added DTED management tool to Overlay Manager
++ Fix Icon / Font Size changes
+
++ ATAK CIV 4.2 SDK BETA 6c4faf0 (1604325185)
+
++ upgrade to 2.2.4 of GDAL
++ addition of the OV-10 3-D model
++ self coordinate NullPointerException
++ merge to the latest Gv2F video libraries
+
++ ATAK CIV 4.2 SDK ALPHA 5b7d5e0 (1603374100)
+
++ fixes to the unified build for 4.2
++ globe mode as default
++ improve java documetnation
++ introduces GeoPDF support
+
++ ATAK CIV 4.2 ALPHA SDK f22bab4 (1602867643)
+
++ introduce a unified build for 4.2 that can be flavored with a system plugin to be military
++ removal of remaining transapps libraries
++ removal of airplane mode toggling logic (no longer functional)
++ fixes for 3D vehicle rendering
++ introduction of a commercial signing key
++ common commo fix for http port changes
++ various bloodhound fixes
++ integration of fixes based on playstore reported crashes
++ elipse rendering rotation fix
++ support for system level setprop/getprop to modify runtime behavior
+
++ ATAK 4.2 ALPHA SDK 1eb2fd26 (1601693140)
+
++ support for Android 11
+
++ ATAK 4.2 ALPHA SDK 47148f9 (1600127119)
+
++ bump the API number
+
++ ATAK CIV 4.2 ALPHA SDK 0b45fd0 (1599850062)
+
++ very early access 4.2 - no API bump yet
++ add in missing method implementation in the PluginContext for Android 30 running on a Pixel 4 XL
++ refactor Ellipse to use the terms minor and major radius instead of width and height since height really means height
++ fix deadlock with Angle Overlay class
++ migrate to using source controlled Android Zip implementation
++ fix lines and patern rendering
+
+
++ ATAK 4.2 ALPHA SDK 86a59643 (1599603571)
+
++ very early access 4.2 - no API bump yet
+
++ ATAK 4.1.1 SDK 80bc671e (1598642650)
+
++ Final Version of 4.1.1
++ Added in C-141 and C-146
+
+
++ ATAK 4.1.1 RC SDK 99fdeac (1598021621)
+
++ Polish language translation
++ fix for crash on Android 6 with set text
++ migration of Mr. Sid support to only within GDAL
++ extrusion of KML shapes
++ migration of SQLiteDatabase usage with DatabaseIface
+
++ ATAK 4.1.1 PREVIEW SDK 215fe482 (1597442700)
+
++ protect against a case where the style id is null + protect against a null raw style
++ Marker with a Invalid Custom Iconset fails to show up in the overlay manager
++ GRG Builder Fails to capture certain imagesets
++ ETA is now calculated via a bloodhound's route if route mode is enabled.
++ fix Locked on self in 3D does not work well
++ protect against a NPE during enrollment
++ Vehicle free-look fixes/improvements
+
++ ATAK 4.1.0.0 SDK 8ac941c (1595955406)
+
++ final core build for 4.1
+
++ ATAK 4.1 RC SDK e19b252 (1595015937)
+
++ defer graphic memory allocation on start
++ provide the ability to disable 3-D mode on some devices
++ tweak alpha blending for vehicle models
+
++ ATAK 4.1 BETA2 SDK 778134f (1594655269)
+
++ Cannot assign hashtags from OM top-level lists
++ Fixes to allow for better username/password handling with WMS pointers
++ Fix vehicle model outline capture doesn't honor draw resolution
++ parser was failing to detect as KMZ and massage icon URL
+
++ ATAK 4.1 BETA SDK a571d4b (1594263087)
+
++ add catch on query to prevent crash in event of unexpected error while deleting GRGs
++ update the current apks provided
++ turn off the send function unless it is a dataset pointer
++ calculate `displayDpi` based on `DisplayMatrics.xdpi` and `DisplayMetrics.ydpi` as opposed to using the nominal value of `DisplayMetrics.densityDpi`  * tested on S9 TE, S8, S5 and Tab A
+
+
++ ATAK 4.1 BETA SDK 4b3b1b95 (1594118197)
+
++ re-enable `GLQuadTileNode3` + implement texture borrowing 
++ fix layer leak on remove
++ Bloodhound supports autorouting for ground use.
+
+ATAK 4.1 FF SDK 8e533d9 (1593480374)
+
++ Fix for crash when importing large files
+
++ ATAK 4.1 FF SDK 6c067c2 (1593174680)
+
++ Basic MultiPolyline fixes
++ Vehicle Model heading line is being obscured when DTED is installed
++ Route rendering in 3D
++ Address Fortify findings
++ Address warnings in the log cat that spew stack traces
+
++ ATAK 4.1 ALPHA SDK 782cf89 (1592744164)
+
++ Fix generic motion event call back to honor whether the listener has handled the event
++ fix black screen when rendering instances models + add base code for LCS
++ Modified DrawingCircleCreationTool to only invoke it's callback if the circle has actually been created.
++ refactor Cesium 3D Tiles code from plugin to core
++ support route around when defining a route
++ Extrude shape Java binding initialization
+
++ ATAK 4.1 ALPHA SDK 01a95f9 (1591816035)
+
++ rescan after permissions are accepted.
++ Java <-> C++ Layer Interop + Java AtakMapView layer management implemented via SDK
++ address blank screen issue for slant report
++ when pulling an altitude from a model - specify it is from a 3D - Model
++ closely mimic the behavior when dropping a point for the first time and fine adjusting a point
++ migrate the GLPolyline class over to extend GLShape2.
+
++ ATAK 4.1 ALPHA SDK 64def0e (1590772255)
+
++ fix lock on center in a case where the marker is not to float to the bottom of the screen during moving
++ fix crash on an inproperly configured ROM / Knox environment - the usb endpoint is null
++ Add https server functionality for local data package transfer
++ abstracted the test ping implemenentation out of the rover drop down receiver
++ fix 3-D model loading
+
++ ATAK 4.1 ALPHA SDK 91463a7 (1590171506)
+
++ fix: deletion of file overlays via OM no longer works
++ add in android:usesCleartextTraffic="true" 
++ Bullseye details does not list associated feeds
++ Update to feature style is properly reflected
+
++ ATAK 4.1 ALPHA SDK 45c98f3 (1589588519)
+
++ Migrate AlertDialog width code to use a helper reducing the amount of copy and paste.
++ augment the NativeFeatureCursor to make use of the FeatureDefinition3
++ address a case where the rectangle center might not be set.
++ renderlines either absolute, relative, or clamp 
++ provide for a new interface for dynamically modifying a menu item  
+
++ ATAK 4.1 ALPHA SDK c9f48ee (1589372065)
+
++ render the point either absolute, relative, or clamp / reflect values as part of the features in the overlay manager
++ settings Search Impacts User's Ability to Edit Setting Values
++ WaveRelay input - User network input does not persist
++ prompt to import newly added DP files other than feature sets
++ render the point either absolute, relative, or clamp 
++ reflect values as part of the features in the overlay manager
+
++ ATAK 4.1 ALPHA SDK e5f04c1 (1588968006)
+
++  pass down resolution to the LabelPointStyle in order to allow for tweaking when the label for a label point is displayed.
++ migrate FeatureDataStoreMapOverlay from using FeatureDataStore to FeatureDataStore2
++ enable round trip of asset and base64 URIs
++ move to Android 29 for core with a minimum of 21
++ manual merge from branch opengl-declaration (sets the minimum required open gl for core)
+
+
++ ATAK 4.1 ALPHA SDK 7ee30bf (1588379348)
+
++ update to Android Gradle 3.6.3
++ upgrade to Android X per the guidelines in 
+   https://confluence.takmaps.com/display/DEV/Changes+to+the+build+environment+for+4.1
+   please note - many plugins master branch has been altered to take use of the new API
++ 3-D points in KML now support altitude
+
+
++ ATAK 4.1 ALPHA SDK d36dd19 (1587818296)
+
++ update to Android Gradle 3.6
++ update to compileSdk 29 but retain minimumSdk 21
++ added French Translation for strings
++ honor altitude above terrain for Feature points
+
+
++ ATAK 4.0 SDK dfb9183 (1585936657)
+
++ updated the version sub minor number to 4.0.0.2
++ fixed issue with displaying embedded images in the HTML part of KMZ files.
++ extended Stale Time to 1 year for the point dropper tool.
+
++ ATAK 4.0 SDK 3a23eb4 (1585690033)
+
++ missing name changed file in the license directory
++ updated the version sub minor number to 4.0.0.1
+
++ ATAK 4.0 SDK 19d602c (1585682467)
+
++ update the EULA
+
++ ATAK 4.0 SDK d4dca08 (1585165312)
+
++ update the version title
+
++ ATAK 4.0 RC3 SDK 4719424 (1584961072)
+
++ Unregister power saving Broadcast Receiver correctly
++ notifications for Android 26 and above need to either use NotificationUtil (preferred) or properly use one of the existing channels when constructing a builder
++ fix null pointer possibilities with malformed intents + allow for audio chiming within a notification channel
++ allows ATAK native crash log TXT files to be uploaded to TAK Server
+
+
++ ATAK 4.0 RC SDK 0a18e87 (1584101897)
+
++ Mission markers can not be edited: b-m-p-c-cp, b-m-p-c-ip, b-m-p-w-GOTO
++ Initial run warning - Notification Channel cannot be null on an emulator
++ significant rewrite of reference management in ElMgrTerrainRenderServicA
++ OTA Filter out non Android products
++ warn a user if power saving is enabled as a warning notification
++ 4.0 OTA not working add in [ as %5B and ] as %5D
++ address areas with potential for an NPE
++ prompt for Additional Location Permission for 29
++ remove redundant setShapeMenu method override
++ pull route export options from the ExporterManager system
+
++ ATAK 4.0 UAT SDK 0923533 (1583583115)
+
++ SSE Slant Marker - need Jackpot option
++ Update User Manual MIL Version
++ Cannot edit OP marker name
++ IllegalArgumentException should have a reason
++ Search keyboard reopens after being dismissed
++ add flag for toggling zoom-to-file behavior on import
++ introduce the latest versions of the external tools for ATAK 4.0
++ Disabling the Bluetooth Support setting is locking up ATAK Preferences
++ Self speed not populated in top right focus widget
++ fix: crash when attempting to open external SD card files using an intent
++ preferences AlertDialog NPE
++ Setting Stream resolution to Maximum, (3096p) causes ICU to crash
+
++ ATAK 4.0 BETA 3 SDK fe2c981 (1583362886)
+
++ Red-X fix guarding against incorrectly pulling self information
++ ICU fix for crash when selecting unsupported resolutions
++ Network Monitor filtering tun*
++ API Cleanup
+
++ ATAK 4.0 BETA 2 SDK 3bdf570 (1583106676)
+
++ R&B Circle - Radius fine adjust
++ Crash when selecting Rectangle for Map Download
++ Fine adjust and 3D compass interactions
++ Crash when selecting Rectangle for Map Download
++ Red X/SPI does not keep Range And Bearing information when moved.
++ Crash editing remarks on Circles
++ Port incorrect in video urls from CoT.
++ GL invalidate cached elevation value when point moves
+
++ ATAK 4.0 BETA SDK 747a77c (1582840101)
+
++ Hashtag fixes 
++ Improved javadoc documentation
++ Address crash log findings during Feature Freeze testing
+
++ ATAK 4.0 FEATURE FREEZE SDK 3a6b31e (1582686694)
+
++ Distribution Statement available on the Splash Screens
++ Fix issue with Relock Widget
++ Fixes to ICU to better utilize the Camera 2 interface
++ Protect against a NPE crash with a null model
++ Correct issue with the title of the custom CredentialsPreference 
+
+
++ ATAK 4.0 FEATURE FREEZE SDK 34037ae (1582338029)
+
++ Updated LabelPointStyle documentation to reflect change in the interface.
++ Native crash reporting (experimental)
++ Mobile map "show all" checkbox missing on start up fix.
++ DRG Masking Support
++ Documentation changes for GeomagneticField and correction for proper year.
++ Updated supplied javadoc and corrections to existing java docs
++ Migration to Gradle 6.2
++ Simple Model Ligting
++ Added interface to provide raw KLV for the Video metadata callback.
++ Addressed code findings based on static code analysis
++ Fixed map flicker in globe mode on 64bit devices.
++ Additional testing with Android 10
+
++ATAK 4.0 Alpha SDK 2360636 (1581942940)
+
++ Bluetooth Low Energy API exposed for 3rd party integration
++ Civilian SDK marked with Distribution A statements.
++ Fix Android 10 issue with the Altitude not being set when using GPS
++ Fixes for crash logs retrieved from TAK servers including several NullPointerException logs.
++ Support for variable text size with LabelPointStyle
++ Fix Marquee scrolling for Marker text
++ Additional Hashtag support and fixes specifically for open polylines.
+
+
+-ATAK 4.0 Alpha SDK b603b70 (1581192663)
+
++ Numbering is now 4.0 and will be used instead of 3.14
++ Introduction of Hashtag support within remarks for shape, markers
++ Addition and updates to Javadoc
++ Allow for a plugin to force GPS bearing 100% of the time
++ Address ImageViewer edit button crash
++ Better warning when a plugin is not set with the correct API number or signed incorrectly.
++ Update to address a new radio in Network Monitor
+ 
+
+
+-ATAK 3.14 Alpha SDK (1580571136)
+
++ ATAK-12238 Toolbar Manager - Toolbar Layout Text Issue
++ Android 10 fix for Action Bar
++ Relock Widget for quickly restarting the lock on an icon after breaking lock.
++ Search Settings
+
+
+-ATAK 3.14 Alpha SDK (1579555685)
+
+
+-ATAK 3.14 Alpha SDK (1579019143)
+
+- plugins are now required to be signed by either the development key or a production key
+- various fixes for the migration to Android 26
+
+ 
+ATAK 3.14 Alpha SDK (1578013492)
+
+- plugins are now required to supply arm64-v8a binaries
+- migration to Android 26 but still allow for support back to Android 21
+- Use com.atakmap.android.util.FileProviderHelper instead of directly using Uri.fromFile or Intent.setDataAndType.
+

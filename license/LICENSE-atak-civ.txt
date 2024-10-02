@@ -1,0 +1,53 @@
+﻿
+TAK SOFTWARE LICENSE AGREEMENT
+
+This software license agreement (hereinafter the "agreement”) governs all versions of the following TAK software products (hereinafter the "TAK Software”): TAK-CIV, TAK-GOV, TAK-MIL and the TAK Software Development Kit (hereinafter the "TAK-SDK”), including software object code, software source code, and software documentation related to the TAK Software.  
+This agreement is entered into between the United States Federal Government, as represented by the U.S. Army Futures Command, Combat Capabilities Development Command (CCDC), C5ISR Center (hereinafter the "The Government”) and the recipient of the TAK software (hereinafter referred to as "you”).  "You" (or "your") means an individual or a legal entity exercising rights under this agreement.   
+In consideration for your access and use of the TAK Software (hereinafter "The Software”), you hereby agree to the following terms and conditions of this agreement: 
+
+1. By downloading or accessing The Software (or otherwise indicating assent to this agreement), you are agreeing to the terms and conditions of this agreement. 
+
+2. If you do not agree to these terms and conditions, do not download or access The Software; click the "i do not agree" or "no" button or otherwise indicate refusal; make no further attempt to access or use The Software; promptly return any media containing The Software; and remove or delete any electronic copies of The Software.
+
+3. TAK-CIV object code license grant: 
+
+At the sole discretion of The Government, you may be granted access to the TAK-CIV software in object code format.  If you are granted access to the TAK-CIV object code, you are granted a perpetual, non-exclusive, no-charge, royalty-free right to use, copy, and/or distribute the TAK-CIV software in object code format, and to permit persons to whom The Software is furnished to do so.  You are not permitted to sell, reverse engineer, disassemble, or decompile the TAK-CIV software, or to permit others to do so.  Except as expressly stated herein, this agreement does not grant you any intellectual property rights in The Software and all rights not expressly granted are reserved by The Government and/or the copyright owner.  If you publish and/or distribute the TAK-CIV software, you shall provide a copy of this agreement and corresponding third party license notices to the recipient of the TAK-CIV software; you are not permitted to alter the terms and conditions of this agreement.  
+
+4. TAK-GOV object code license grant: 
+
+At the sole discretion of The Government, you may be granted access to the TAK-GOV software in object code format.  If you are granted access to the TAK-GOV software, you are granted a perpetual, non-exclusive, no-charge, royalty-free right to use the TAK mil software in object code format.  You are not permitted to copy, merge, publish, distribute, sublicense, sell, reverse engineer, disassemble, or decompile the TAK-GOV software, or to permit others to do so.  Except as expressly stated herein, this agreement does not grant you any intellectual property rights in The Software and all rights not expressly granted are reserved by The Government and/or the copyright owner.
+
+5. TAK-MIL object code license grant: 
+
+At the sole discretion of The Government, you may be granted access to the TAK-MIL software in object code format.  If you are granted access to the TAK-MIL software, you are granted a perpetual, non-exclusive, no-charge, royalty-free right to use the TAK-MIL software in object code format.  You are not permitted to copy, merge, publish, distribute, sublicense, sell, reverse engineer, disassemble, or decompile the TAK-MIL software, or to permit others to do so.  Except as expressly stated herein, this agreement does not grant you any intellectual property rights in The Software and all rights not expressly granted are reserved by The Government and/or the copyright owner.  
+
+6. TAK-SDK license grant: 
+
+At the sole discretion of The Government, you may be granted access to the TAK-SDK.  If you are granted access to the TAK-SDK, you are granted a perpetual, non-exclusive, no-charge, royalty-free right to use the TAK-SDK and to derive new works or applications based on the TAK-SDK.  You are not permitted to copy, modify, publish, distribute, sublicense, sell, reverse engineer, disassemble, or decompile the TAK-SDK or to permit others to do so.  Except as expressly stated herein, this agreement does not grant you any intellectual property rights in The Software and all rights not expressly granted are reserved by The Government or the copyright owner.  
+
+7. You agree that your use of the TAK Software will comply with all international, federal, state and local laws, rules and regulations of the United States and any foreign country in which The Software is used.  In addition, you shall strictly comply with all applicable laws, rules and regulations in connection with your use of The Software. Without limiting the foregoing, the TAK software (and related technical data) is subject to United States export control laws and is subject to export or import regulations in other countries.  You shall comply strictly with all such regulations and acknowledge that you have the responsibility to obtain all necessary licenses to export, re-export, or import The Software.
+
+8. Notices of proprietary rights:
+
+You shall maintain and reproduce all trademark, copyright, patent, and other notices of proprietary rights on all copies, in any form, of The Software in the same form and manner that such trademark, copyright, patent, and other notices of proprietary rights are included on The Software.
+
+9. Limited warranty and disclaimer: 
+
+A. No warranty whatsoever, expressed or implied, with respect to The Software is made by The Government or its licensees or contractors, any and all other warranties are expressly disclaimed, including, without limitation, any warranty of merchantability, fitness for a particular purpose, data accuracy or integrity, non-infringement or quiet enjoyment.  The Government does not represent or warrant that: (i) The Software will operate error-free; (ii) your use of The Software will be uninterrupted; (iii) all defects will be identified, reproducible, or resolved; (iv) The Software will meet your particular business needs; or (v) The Software will be immune from unlawful or unauthorized access or use by third parties, including computer hacking, tampering, corruption or destruction of The Software. 
+
+B. The Government has used reasonable efforts to minimize defects or errors in The Software. However, you acknowledge and agree upon entering into this agreement to assume the risk of any and all liability, damage or loss from use, or inability to use The Software.
+
+10. Limitations on liability:
+
+In no event will The Government or any of its affiliates, contractors suppliers or agents be liable to buyer for any indirect, incidental, consequential or special damages for any act or omission arising out of or in connection with The Software or with the sale, delivery, installation, maintenance, operation, performance or use of The Software, including without limitation any losses, expenses, or damages incurred by reason of loss of use, lost revenues or profits, costs associated with down-time, costs of substitute products, facilities or services, lost, damaged or destroyed data and any similar or dissimilar damages, expenses or losses, even if foreseeable or if The Government has been advised of the possibility of such damages.
+
+11. Term and termination: 
+
+This agreement is effective until terminated.  The Government shall have the right to terminate your license rights under this agreement at any time and for any reason upon notice to you. In addition, your license rights under this agreement will terminate immediately without notice from The Government if you fail to comply with any provision of this agreement. Upon termination, you must either return all copies of The Software and all associated license keys in your possession or control, together with any archive copies thereof, or certify to The Government that such copies and keys have been destroyed. 
+
+12. Third party software components: the TAK software includes third party commercial software components that are governed by third party software license agreements.  The use, distribution, and modification of these third-party commercial software components are governed solely by these separate license terms and conditions, unless otherwise noted.  The licenses are provided in thirdparty.txt file provided with the TAK software, which in turn may reference specific license agreements also contained in the license folder.
+
+13. Miscellaneous:
+
+If any provision of this agreement is held by a court of competition jurisdiction to be void or unenforceable, the remainder of this agreement will remain in full force and will not be terminated. Neither The Government nor its licensee will be liable for any delays resulting from circumstances or causes beyond its reasonable control. No addition to or modification of this agreement will be effective unless approved in advance by The Government and its licensee. Any delay or failure to enforce at any time any provision of this agreement will not constitute a waiver thereof or of any other provision or any right to enforce any such provision. The rights and remedies expressly provided to The Government herein are not exclusive, but are cumulative and in addition to any other remedies available at law or in equity. You will not assign this agreement or any right or interest under this agreement without The Government's prior written consent. Any attempted assignment without consent will be void. All notices must be in writing and delivered to licensee by certified mail (return receipt requested), overnight, courier, or facsimile with confirmation.
+You acknowledge that you have read this agreement and understand it and that by using The Software you agree to be bound by its terms and conditions. This agreement supersedes all prior oral agreements, proposals or understandings, and any other communications between the parties relating to the subject matter of this agreement.
