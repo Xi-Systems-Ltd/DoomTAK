@@ -30,6 +30,7 @@
 #include "d_net.h"
 #include "g_game.h"
 #include "i_system.h"
+#include "logger.h"
 
 
 int mb_used = 6 * (sizeof(void*) / 4);
@@ -146,8 +147,7 @@ byte* I_AllocLow(int length)
 void I_Error(char* error)
 {
     // Message first.
-    if (error) doom_print(error);
-    doom_print("\n");
+    if (error) LOGE("%s", error);
 
     // Shutdown. Here might be other errors.
     if (demorecording)

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.atak.plugins.impl.AbstractPluginTool;
-import com.atakmap.android.doomtak.plugin.R;
 import com.atakmap.android.ipc.AtakBroadcast;
 import com.atakmap.android.maps.MapView;
 
@@ -37,7 +36,7 @@ public class DoomTakTool extends AbstractPluginTool implements Disposable {
            mv.post(new Runnable() {
                @Override
                public void run() {
-                   Toast.makeText(mv.getContext(), "Message from JNI: " + myNativeMethod(),
+                   Toast.makeText(mv.getContext(), "Message from JNI: " + runDoom(),
                            Toast.LENGTH_LONG).show();
                }
            });
@@ -50,6 +49,6 @@ public class DoomTakTool extends AbstractPluginTool implements Disposable {
         AtakBroadcast.getInstance().unregisterReceiver(br);
     }
 
-    private static native String myNativeMethod();
+    private static native String runDoom();
 
 }

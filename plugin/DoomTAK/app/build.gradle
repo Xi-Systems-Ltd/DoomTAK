@@ -119,7 +119,7 @@ android {
     buildToolsVersion "30.0.3"
     ndkVersion "21.4.7075529"
 
-    externalNativeBuild.ndkBuild.path = 'src/main/cpp/Android.mk'
+    externalNativeBuild.cmake.path = 'src/main/cpp/CMakeLists.txt'
 
     bundle {
         storeArchive {
