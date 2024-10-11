@@ -13,9 +13,12 @@
 #include "logger.h"
 #include "m_argv.h"
 #include "m_misc.h"
+#include "doomtak.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
 
 
 extern byte* screens[5];
@@ -73,7 +76,36 @@ static void doom_free_impl(void* ptr)
 
 void* doom_open_impl(const char* filename, const char* mode)
 {
-    return fopen(filename, mode);
+    if (mode[0] == 'w') return NULL;
+
+    AAsset *asset = AAssetManager_open(gAssetManager, filename, 0);
+    if (asset == NULL) {
+        LOGE("Failed to open asset: %s\n", filename);
+        return NULL;
+    }
+
+    // Read the asset into memory
+    off_t assetLength = AAsset_getLength(asset);
+    void* buffer = malloc(assetLength);
+    if (buffer == NULL) {
+        LOGE("Failed to allocate memory for asset.\n");
+        AAsset_close(asset);
+        return NULL;
+    }
+
+    AAsset_read(asset, buffer, assetLength);
+    AAsset_close(asset);  // Close the asset after reading
+
+    // Use fmemopen to create a FILE* from the memory buffer
+    FILE* file = fmemopen(buffer, assetLength, "r");
+    if (file == NULL) {
+        printf("Failed to create FILE* from memory.\n");
+        free(buffer);  // Clean up memory if fmemopen fails
+        return NULL;
+    }
+
+    // Return the FILE* stream
+    return file;
 }
 void doom_close_impl(void* handle)
 {

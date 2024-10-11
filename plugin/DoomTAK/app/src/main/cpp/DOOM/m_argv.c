@@ -41,6 +41,8 @@ char** myargv;
 // or 0 if not present
 int M_CheckParm(char* check)
 {
+    doom_print(" Check parm: ");
+    doom_print(check);
     int i;
 
     for (i = 1; i < myargc; i++)

@@ -25,6 +25,7 @@
 //-----------------------------------------------------------------------------
 
 
+#include <stdio.h>
 #include "doom_config.h"
 
 #if defined(DOOM_WIN32)
@@ -534,62 +535,21 @@ void D_AddFile(char* file)
 //
 void IdentifyVersion(void)
 {
-    char* doom1wad;
-    char* doomwad;
-    char* doomuwad;
-    char* doom2wad;
-
-    char* doom2fwad;
-    char* plutoniawad;
-    char* tntwad;
-
-    char* home;
-    char* doomwaddir;
-    doomwaddir = doom_getenv("DOOMWADDIR");
-    if (!doomwaddir)
-        doomwaddir = ".";
 
     // Commercial.
-    doom2wad = doom_malloc(doom_strlen(doomwaddir) + 1 + 9 + 1);
-    //doom_sprintf(doom2wad, "%s/doom2.wad", doomwaddir);
-    doom_strcpy(doom2wad, doomwaddir);
-    doom_concat(doom2wad, "/doom2.wad");
-
+    char* doom2wad = "doom2.wad";
     // Retail.
-    doomuwad = doom_malloc(doom_strlen(doomwaddir) + 1 + 8 + 1);
-    //doom_sprintf(doomuwad, "%s/doomu.wad", doomwaddir);
-    doom_strcpy(doomuwad, doomwaddir);
-    doom_concat(doomuwad, "/doomu.wad");
-
+    char* doomuwad = "doomu.wad";
     // Registered.
-    doomwad = doom_malloc(doom_strlen(doomwaddir) + 1 + 8 + 1);
-    //doom_sprintf(doomwad, "%s/doom.wad", doomwaddir);
-    doom_strcpy(doomwad, doomwaddir);
-    doom_concat(doomwad, "/doom.wad");
-
+    char* doomwad = "doom.wad";
     // Shareware.
-    doom1wad = doom_malloc(doom_strlen(doomwaddir) + 1 + 9 + 1);
-    //doom_sprintf(doom1wad, "%s/doom1.wad", doomwaddir);
-    doom_strcpy(doom1wad, doomwaddir);
-    doom_concat(doom1wad, "/doom1.wad");
-
-    // Bug, dear Shawn.
-   // Insufficient malloc, caused spurious realloc errors.
-    plutoniawad = doom_malloc(doom_strlen(doomwaddir) + 1 +/*9*/12 + 1);
-    //doom_sprintf(plutoniawad, "%s/plutonia.wad", doomwaddir);
-    doom_strcpy(plutoniawad, doomwaddir);
-    doom_concat(plutoniawad, "/plutonia.wad");
-
-    tntwad = doom_malloc(doom_strlen(doomwaddir) + 1 + 9 + 1);
-    //doom_sprintf(tntwad, "%s/tnt.wad", doomwaddir);
-    doom_strcpy(tntwad, doomwaddir);
-    doom_concat(tntwad, "/tnt.wad");
-
+    char* doom1wad = "doom1.wad";
+    char* plutoniawad = "plutonia.wad";
+    char* tntwad = "tnt.wad";
     // French stuff.
-    doom2fwad = doom_malloc(doom_strlen(doomwaddir) + 1 + 10 + 1);
-    //doom_sprintf(doom2fwad, "%s/doom2f.wad", doomwaddir);
-    doom_strcpy(doom2fwad, doomwaddir);
-    doom_concat(doom2fwad, "/doom2f.wad");
+    char* doom2fwad = "doom2f.wad";
+
+    char* home;
 
 #if !defined(DOOM_WIN32)
     home = doom_getenv("HOME");
@@ -1254,5 +1214,6 @@ void D_DoomMain(void)
         debugfile = doom_open(filename, "w");
     }
 
+    doom_print("I_InitGraphics: Init graphics.\n");
     I_InitGraphics();
 }

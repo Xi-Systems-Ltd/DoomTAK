@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.atakmap.android.doomtak.plugin.PluginNativeLoader;
 
+import com.atakmap.android.ipc.AtakBroadcast;
 import com.atakmap.android.maps.AbstractMapComponent;
 import com.atakmap.android.maps.MapView;
 
@@ -23,6 +24,8 @@ public class DoomTakMapComponent extends AbstractMapComponent {
     public static final String TAG = "DoomTakMapComponent";
 
     private Context pluginContext;
+
+    private DoomTakDropDownReceiver ddr;
 
     @Override
     public void onStart(final Context context, final MapView view) {
@@ -65,6 +68,14 @@ public class DoomTakMapComponent extends AbstractMapComponent {
         // correct order. Android will not automatically load dependencies
         // even if they are on the system library path
         PluginNativeLoader.loadLibrary("doomtak");
+
+        ddr = new DoomTakDropDownReceiver(
+                view, context);
+
+        Log.d(TAG, "registering the plugin filter");
+        AtakBroadcast.DocumentedIntentFilter ddFilter = new AtakBroadcast.DocumentedIntentFilter();
+        ddFilter.addAction(DoomTakDropDownReceiver.SHOW_PLUGIN);
+        registerReceiver(null, ddr, ddFilter);
     }
 
 

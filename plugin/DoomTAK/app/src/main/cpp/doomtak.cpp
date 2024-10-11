@@ -1,17 +1,45 @@
-#include <jni.h>
+#include "doomtak.h"
 #include <cstdio>
 #include <cstdlib>
-#include "com_atakmap_android_doomtak_plugin_DoomTakTool.h"
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
+#include "com_atakmap_android_doomtak_DoomTakGLRenderer.h"
 #include "DOOM.h"
+#include "doomdef.h"
+#include "logger.h"
 
-JNIEXPORT jstring JNICALL Java_com_atakmap_android_doomtak_plugin_DoomTakTool_runDoom
-        (JNIEnv *env, jclass clazz) {
+AAssetManager *gAssetManager = nullptr;
+
+extern "C" {
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakGLRenderer_initNativeLayer(
+        JNIEnv *env, jobject obj, jobject assetManager) {
+    gAssetManager = AAssetManager_fromJava(env, assetManager);
     // Set the HOME variable to a suitable directory
     const char *homePath = ".";
     setenv("HOME", homePath, 1);
-    const char *args[] = {nullptr, "-shdev"};
-    doom_init(2, const_cast<char **>(args), 0);
-    printf("Doom initialized\n");
+    // Initialize the DOOM engine
+    int argc = 1;
+    char *argv[] = {"doom"};
+    doom_init(argc, argv, 0);  // Initialize with no special flags
+}
 
-    return env->NewStringUTF("Hello DoomTAK!");
+// This method will render the OpenGL content
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakGLRenderer_doomUpdate(
+        JNIEnv *env, jobject obj) {
+    // Call the DOOM engine to update the game state
+    doom_update();
+}
+
+JNIEXPORT jbyteArray JNICALL
+Java_com_atakmap_android_doomtak_DoomTakGLRenderer_getFramebuffer(
+        JNIEnv *env, jobject obj, jint channels) {
+    const unsigned char *framebuffer = doom_get_framebuffer(channels);
+    jbyteArray result = env->NewByteArray(SCREENWIDTH * SCREENHEIGHT * channels);
+    env->SetByteArrayRegion(result, 0, SCREENWIDTH * SCREENHEIGHT * channels,
+                            (const jbyte *) framebuffer);
+    return result;
+}
 }
