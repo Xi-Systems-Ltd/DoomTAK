@@ -164,6 +164,16 @@ typedef enum
 } doom_button_t;
 
 
+// Joy button mapping
+typedef enum
+{
+    DOOM_JOY_BUTTON_0 = 0,
+    DOOM_JOY_BUTTON_1 = 1,
+    DOOM_JOY_BUTTON_2 = 2,
+    DOOM_JOY_BUTTON_3 = 3
+} doom_joy_button_t;
+
+
 // For the software renderer. Default is 320x200
 void doom_set_resolution(int width, int height);
 
@@ -208,6 +218,9 @@ void doom_key_up(doom_key_t key);
 void doom_button_down(doom_button_t button);
 void doom_button_up(doom_button_t button);
 void doom_mouse_move(int delta_x, int delta_y);
+void doom_joy_button_down(doom_joy_button_t button);
+void doom_joy_button_up(doom_joy_button_t button);
+void doom_joystick(int x, int y);
 
 
 #ifdef __cplusplus

@@ -33,6 +33,7 @@ static unsigned char* screen_buffer = 0;
 static unsigned char* final_screen_buffer = 0;
 static int last_update_time = 0;
 static int button_states[3] = { 0 };
+static int joy_button_states[4] = { 0 };
 static char itoa_buf[20];
 
 
@@ -655,4 +656,60 @@ void doom_mouse_move(int delta_x, int delta_y)
     {
         D_PostEvent(&event);
     }
+}
+
+
+void doom_joy_button_down(doom_joy_button_t button)
+{
+    joy_button_states[button] = 1;
+
+    event_t event;
+    event.type = ev_joystick;
+    event.data1 =
+            (joy_button_states[0]) |
+            (joy_button_states[1] ? 2 : 0) |
+            (joy_button_states[2] ? 4 : 0) |
+            (joy_button_states[3] ? 8 : 0);
+    event.data2 = event.data3 = 0;
+    D_PostEvent(&event);
+}
+
+
+void doom_joy_button_up(doom_joy_button_t button)
+{
+    joy_button_states[button] = 0;
+
+    event_t event;
+    event.type = ev_joystick;
+    event.data1 =
+            (joy_button_states[0]) |
+            (joy_button_states[1] ? 2 : 0) |
+            (joy_button_states[2] ? 4 : 0) |
+            (joy_button_states[3] ? 8 : 0);
+
+    event.data1 =
+            event.data1
+            ^ (joy_button_states[0] ? 1 : 0)
+            ^ (joy_button_states[1] ? 2 : 0)
+            ^ (joy_button_states[2] ? 4 : 0)
+            ^ (joy_button_states[3] ? 8 : 0);
+
+    event.data2 = event.data3 = 0;
+    D_PostEvent(&event);
+}
+
+
+void doom_joystick(int x, int y)
+{
+    event_t event;
+
+    event.type = ev_joystick;
+    event.data1 =
+            (joy_button_states[0]) |
+            (joy_button_states[1] ? 2 : 0) |
+            (joy_button_states[2] ? 4 : 0) |
+            (joy_button_states[3] ? 8 : 0);
+    event.data2 = x;
+    event.data3 = y;
+    D_PostEvent(&event);
 }

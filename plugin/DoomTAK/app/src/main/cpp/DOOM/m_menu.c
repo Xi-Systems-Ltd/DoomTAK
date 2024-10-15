@@ -1679,34 +1679,34 @@ doom_boolean M_Responder(event_t* ev)
 
     if (ev->type == ev_joystick && joywait < I_GetTime())
     {
-        if (ev->data3 == -1)
+        if (ev->data3 < -30)
         {
             ch = KEY_UPARROW;
             joywait = I_GetTime() + 5;
         }
-        else if (ev->data3 == 1)
+        else if (ev->data3 > 30)
         {
             ch = KEY_DOWNARROW;
             joywait = I_GetTime() + 5;
         }
 
-        if (ev->data2 == -1)
+        if (ev->data2 < -30)
         {
             ch = KEY_LEFTARROW;
             joywait = I_GetTime() + 2;
         }
-        else if (ev->data2 == 1)
+        else if (ev->data2 > 30)
         {
             ch = KEY_RIGHTARROW;
             joywait = I_GetTime() + 2;
         }
 
-        if (ev->data1 & 1)
+        if (ev->data1 & 8)
         {
             ch = KEY_ENTER;
             joywait = I_GetTime() + 5;
         }
-        if (ev->data1 & 2)
+        if (ev->data1 & 1)
         {
             ch = KEY_BACKSPACE;
             joywait = I_GetTime() + 5;

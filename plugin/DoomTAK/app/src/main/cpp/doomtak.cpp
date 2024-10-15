@@ -42,4 +42,54 @@ Java_com_atakmap_android_doomtak_DoomTakGLRenderer_getFramebuffer(
                             (const jbyte *) framebuffer);
     return result;
 }
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_mouseMove(
+        JNIEnv *env, jobject obj, jint deltaX, jint deltaY) {
+    doom_mouse_move(deltaX, deltaY);
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_keyDown(
+        JNIEnv *env, jobject obj, jint key) {
+    doom_key_down(static_cast<doom_key_t>(key));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_keyUp(
+        JNIEnv *env, jobject obj, jint key) {
+    doom_key_up(static_cast<doom_key_t>(key));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_keyPress(
+        JNIEnv *env, jobject obj, jint key) {
+    doom_key_down(static_cast<doom_key_t>(key));
+    doom_key_up(static_cast<doom_key_t>(key));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonDown(
+        JNIEnv *env, jobject obj, jint button) {
+    doom_joy_button_down(static_cast<doom_joy_button_t >(button));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonUp(
+        JNIEnv *env, jobject obj, jint button) {
+    doom_joy_button_up(static_cast<doom_joy_button_t >(button));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonPress(
+        JNIEnv *env, jobject obj, jint button) {
+    doom_joy_button_down(static_cast<doom_joy_button_t>(button));
+    doom_joy_button_up(static_cast<doom_joy_button_t>(button));
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joystick(
+        JNIEnv *env, jobject obj, jint x, jint y) {
+    doom_joystick(x, y);
+}
 }

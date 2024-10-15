@@ -22,7 +22,7 @@
 
 #include "doom_config.h"
 
-#include "doomdef.h" 
+#include "doomdef.h"
 #include "doomstat.h"
 #include "z_zone.h"
 #include "f_finale.h"
@@ -41,7 +41,7 @@
 #include "am_map.h"
 #include "v_video.h" // Needs access to LFB.
 #include "w_wad.h"
-#include "p_local.h" 
+#include "p_local.h"
 #include "s_sound.h"
 #include "dstrings.h" // Data.
 #include "sounds.h"
@@ -153,7 +153,7 @@ int joybspeed;
 
 fixed_t forwardmove[2] = { 0x19, 0x32 };
 fixed_t sidemove[2] = { 0x18, 0x28 };
-fixed_t angleturn[3] = { 640, 1280, 320 }; // + slow turn 
+fixed_t angleturn[3] = { 640, 1280, 320 }; // + slow turn
 
 doom_boolean gamekeydown[NUMKEYS];
 int turnheld; // for accelerative turning 
@@ -176,7 +176,7 @@ int dclicks2;
 int joyxmove;
 int joyymove;
 doom_boolean joyarray[5];
-doom_boolean* joybuttons = &joyarray[1]; // allow [-1] 
+doom_boolean* joybuttons = &joyarray[1]; // allow [-1]
 
 int savegameslot;
 char savedescription[32];
@@ -295,10 +295,7 @@ void G_BuildTiccmd(ticcmd_t* cmd)
         {
             side -= sidemove[speed];
         }
-        if (joyxmove > 0)
-            side += sidemove[speed];
-        if (joyxmove < 0)
-            side -= sidemove[speed];
+        side += (int) ((float) sidemove[speed] * ((float) joyxmove / 100.0f));
 
     }
     else
@@ -321,10 +318,7 @@ void G_BuildTiccmd(ticcmd_t* cmd)
     {
         forward -= forwardmove[speed];
     }
-    if (joyymove < 0)
-        forward += forwardmove[speed];
-    if (joyymove > 0)
-        forward -= forwardmove[speed];
+    forward -= (int) ((float) forwardmove[speed] * ((float) joyymove / 100.0f));
     if (gamekeydown[key_straferight])
         side += sidemove[speed];
     if (gamekeydown[key_strafeleft])
@@ -410,10 +404,7 @@ void G_BuildTiccmd(ticcmd_t* cmd)
 
     if (mousemove)
         forward += mousey;
-    if (strafe)
-        side += mousex * 2;
-    else
-        cmd->angleturn -= mousex * 0x8;
+    cmd->angleturn -= mousex * 0x8;
 
     mousex = mousey = 0;
 
@@ -539,13 +530,13 @@ doom_boolean G_Responder(event_t* ev)
 
     if (gamestate == GS_LEVEL)
     {
-#if 0 
+#if 0
         if (devparm && ev->type == ev_keydown && ev->data1 == ';')
         {
             G_DeathMatchSpawnPlayer(0);
             return true;
         }
-#endif 
+#endif
         if (HU_Responder(ev))
             return true;        // chat ate the event 
         if (ST_Responder(ev))
@@ -692,7 +683,7 @@ void G_Ticker(void)
                 {
                     //I_Error("Error: consistency failure (%i should be %i)",
                     //        cmd->consistancy, consistancy[i][buf]);
-                    
+
                     doom_strcpy(error_buf, "Error: consistency failure (");
                     doom_concat(error_buf, doom_itoa(cmd->consistancy, 10));
                     doom_concat(error_buf, " should be ");
@@ -910,7 +901,7 @@ void G_DeathMatchSpawnPlayer(int playernum)
     if (selections < 4)
     {
         //I_Error("Error: Only %i deathmatch spots, 4 required", selections);
-        
+
         doom_strcpy(error_buf, "Error: Only ");
         doom_concat(error_buf, doom_itoa(selections, 10));
         doom_concat(error_buf, " deathmatch spots, 4 required");
@@ -1632,7 +1623,7 @@ doom_boolean G_CheckDemoStatus(void)
         endtime = I_GetTime();
         //I_Error("Error: timed %i gametics in %i realtics", gametic
         //        , endtime - starttime);
-        
+
         doom_strcpy(error_buf, "Error: timed ");
         doom_concat(error_buf, doom_itoa(gametic, 10));
         doom_concat(error_buf, " gametics in ");
@@ -1667,7 +1658,7 @@ doom_boolean G_CheckDemoStatus(void)
         Z_Free(demobuffer);
         demorecording = false;
         //I_Error("Error: Demo %s recorded", demoname);
-        
+
         doom_strcpy(error_buf, "Error: Demo ");
         doom_concat(error_buf, demoname);
         doom_concat(error_buf, " recorded");
