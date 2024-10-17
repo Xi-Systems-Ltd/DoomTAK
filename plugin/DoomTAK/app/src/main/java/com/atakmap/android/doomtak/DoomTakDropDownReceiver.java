@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+
 import com.atak.plugins.impl.PluginLayoutInflater;
 import com.atakmap.android.doomtak.input.GyroMouseListener;
 import com.atakmap.android.doomtak.plugin.R;
@@ -27,11 +29,17 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final View dropdownView;
     private final Context pluginContext;
     private GLSurfaceView glSurfaceView;
-    private final Button enterButton;
-    private final Button escButton;
     private final JoystickView joystickView;
     private final ImageButton buttonInteract;
     private final ImageButton buttonShoot;
+    private final Button escButton;
+    private final Button button1;
+    private final Button button2;
+    private final Button button3;
+    private final Button button4;
+    private final Button button5;
+    private final Button button6;
+    private final Button button7;
     private final GyroMouseListener gyroMouseListener;
 
     public native void mouseMove(int deltaX, int deltaY);
@@ -62,74 +70,91 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         dropdownView = PluginLayoutInflater.inflate(context,
                 R.layout.main_layout, null);
 
-        enterButton = dropdownView.findViewById(R.id.enter_button);
-        enterButton.setOnClickListener(view -> {
-            keyPress(13);
-        });
-
-        escButton = dropdownView.findViewById(R.id.esc_button);
-        escButton.setOnClickListener(view -> {
-            keyPress(27);
-        });
-
         joystickView = dropdownView.findViewById(R.id.joystickView);
         joystickView.setJoystickListener(new JoystickView.JoystickListener() {
             @Override
             public void onJoystickDown() {
                 // Press "strafe" joystick button.
-                Log.d("JoystickListener","Joystick pressed.");
+                Log.d("JoystickListener", "Joystick pressed.");
                 joyButtonDown(1);
             }
 
             @Override
             public void onJoystickUp() {
                 // Release "strafe" joystick button.
-                Log.d("JoystickListener","Joystick unpressed.");
+                Log.d("JoystickListener", "Joystick unpressed.");
                 joyButtonUp(1);
             }
 
             @Override
             public void onJoystickMoved(float xPercent, float yPercent) {
-                Log.d("JoystickListener","Joystick moved " + xPercent + ", " + yPercent + ".");
+                Log.d("JoystickListener", "Joystick moved " + xPercent + ", " + yPercent + ".");
                 int xMovement = (int) (xPercent * 100);
                 int yMovement = (int) (yPercent * 100);
-                Log.d("JoystickListener","Joystick movement " + xMovement + ", " + yMovement + ".");
+                Log.d("JoystickListener", "Joystick movement " + xMovement + ", " + yMovement + ".");
                 joystick(xMovement, yMovement);
             }
         });
 
         buttonInteract = dropdownView.findViewById(R.id.buttonInteract);
-        buttonInteract.setOnTouchListener((view, motionEvent) -> {
-            switch ( motionEvent.getAction() ) {
-                case MotionEvent.ACTION_DOWN:
-                    Log.d("buttonAListener","Button A pressed.");
-                    joyButtonDown(3);
-                    break;
-                case MotionEvent.ACTION_UP:
-                    Log.d("buttonAListener","Button A unpressed.");
-                    joyButtonUp(3);
-                    break;
-            }
-            return false;
-        });
-
+        buttonInteract.setOnTouchListener(getJoyButtonTouchListener(3));
         buttonShoot = dropdownView.findViewById(R.id.buttonShoot);
-        buttonShoot.setOnTouchListener((view, motionEvent) -> {
-            switch ( motionEvent.getAction() ) {
-                case MotionEvent.ACTION_DOWN:
-                    Log.d("buttonAListener","Button A pressed.");
-                    joyButtonDown(0);
-                    break;
-                case MotionEvent.ACTION_UP:
-                    Log.d("buttonAListener","Button A unpressed.");
-                    joyButtonUp(0);
-                    break;
-            }
-            return false;
-        });
+        buttonShoot.setOnTouchListener(getJoyButtonTouchListener(0));
+
+        escButton = dropdownView.findViewById(R.id.esc_button);
+        escButton.setOnTouchListener(getKeyTouchListener(27));
+
+        button1 = dropdownView.findViewById(R.id.button1);
+        button1.setOnTouchListener(getKeyTouchListener('1'));
+        button2 = dropdownView.findViewById(R.id.button2);
+        button2.setOnTouchListener(getKeyTouchListener('2'));
+        button3 = dropdownView.findViewById(R.id.button3);
+        button3.setOnTouchListener(getKeyTouchListener('3'));
+        button4 = dropdownView.findViewById(R.id.button4);
+        button4.setOnTouchListener(getKeyTouchListener('4'));
+        button5 = dropdownView.findViewById(R.id.button5);
+        button5.setOnTouchListener(getKeyTouchListener('5'));
+        button6 = dropdownView.findViewById(R.id.button6);
+        button6.setOnTouchListener(getKeyTouchListener('6'));
+        button7 = dropdownView.findViewById(R.id.button7);
+        button7.setOnTouchListener(getKeyTouchListener('7'));
 
         gyroMouseListener = new GyroMouseListener(mapView.getContext(), 39.0);
         gyroMouseListener.setMouseMovementListener(this::mouseMove);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private @NonNull View.OnTouchListener getJoyButtonTouchListener(int button) {
+        return (View view, MotionEvent motionEvent) -> {
+            switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    Log.d("joyButtonTouchListener", "Button " + button + " pressed.");
+                    joyButtonDown(button);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    Log.d("joyButtonTouchListener", "Button " + button + " unpressed.");
+                    joyButtonUp(button);
+                    break;
+            }
+            return false;
+        };
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private @NonNull View.OnTouchListener getKeyTouchListener(int key) {
+        return (View view, MotionEvent motionEvent) -> {
+            switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    Log.d("keyTouchListener", "Key " + key + " pressed.");
+                    keyDown(key);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    Log.d("keyTouchListener", "Key " + key + " unpressed.");
+                    keyUp(key);
+                    break;
+            }
+            return false;
+        };
     }
 
     /**************************** PUBLIC METHODS *****************************/
