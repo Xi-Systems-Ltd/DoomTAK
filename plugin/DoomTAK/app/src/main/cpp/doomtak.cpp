@@ -38,6 +38,9 @@ Java_com_atakmap_android_doomtak_DoomTakGLRenderer_getFramebuffer(
         JNIEnv *env, jobject obj, jint channels) {
     const unsigned char *framebuffer = doom_get_framebuffer(channels);
     jbyteArray result = env->NewByteArray(SCREENWIDTH * SCREENHEIGHT * channels);
+    if (result == nullptr) {
+        return nullptr;
+    }
     env->SetByteArrayRegion(result, 0, SCREENWIDTH * SCREENHEIGHT * channels,
                             (const jbyte *) framebuffer);
     return result;
@@ -62,13 +65,6 @@ Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_keyUp(
 }
 
 JNIEXPORT void JNICALL
-Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_keyPress(
-        JNIEnv *env, jobject obj, jint key) {
-    doom_key_down(static_cast<doom_key_t>(key));
-    doom_key_up(static_cast<doom_key_t>(key));
-}
-
-JNIEXPORT void JNICALL
 Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonDown(
         JNIEnv *env, jobject obj, jint button) {
     doom_joy_button_down(static_cast<doom_joy_button_t >(button));
@@ -81,15 +77,20 @@ Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonUp(
 }
 
 JNIEXPORT void JNICALL
-Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joyButtonPress(
-        JNIEnv *env, jobject obj, jint button) {
-    doom_joy_button_down(static_cast<doom_joy_button_t>(button));
-    doom_joy_button_up(static_cast<doom_joy_button_t>(button));
-}
-
-JNIEXPORT void JNICALL
 Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joystick(
         JNIEnv *env, jobject obj, jint x, jint y) {
     doom_joystick(x, y);
+}
+
+JNIEXPORT jshortArray JNICALL
+Java_com_atakmap_android_doomtak_audio_DoomTakSoundPlayer_getSoundBuffer(
+        JNIEnv *env, jobject obj, jint length) {
+    int16_t *soundBuffer = doom_get_sound_buffer();
+    jshortArray result = env->NewShortArray(length / sizeof(int16_t));
+    if (result == nullptr) {
+        return nullptr;
+    }
+    env->SetShortArrayRegion(result, 0, length / sizeof(int16_t), soundBuffer);
+    return result;
 }
 }

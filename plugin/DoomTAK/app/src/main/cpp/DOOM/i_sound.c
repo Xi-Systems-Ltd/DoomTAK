@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -365,7 +365,7 @@ void I_SetChannels()
 {
     // Init internal lookups (raw data, mixing buffer, channels).
     // This function sets up internal lookups used during
-    //  the mixing process. 
+    //  the mixing process.
     int i;
     int j;
 
@@ -788,7 +788,7 @@ void I_UpdateSound(void)
     //  that is 512 values for two channels.
     while (leftout != leftend)
     {
-        // Reset left/right value. 
+        // Reset left/right value.
         dl = 0;
         dr = 0;
 
@@ -800,7 +800,7 @@ void I_UpdateSound(void)
             // Check channel, if active.
             if (channels[chan])
             {
-                // Get the raw data from the channel. 
+                // Get the raw data from the channel.
                 sample = *channels[chan];
                 // Add left and right part
                 //  for this channel (sound)
@@ -852,10 +852,10 @@ void I_UpdateSound(void)
 //extern doom_sound_callbacks_t doom_sound_callbacks;
 //extern doom_boolean skip_next_sound_update;
 
-// 
+//
 // This would be used to write out the mixbuffer
 //  during each game loop update.
-// Updates sound buffer and audio device at runtime. 
+// Updates sound buffer and audio device at runtime.
 // It is called during Timer interrupt with SNDINTR.
 // Mixing now done synchronous, and
 //  only output be done asynchronous?
