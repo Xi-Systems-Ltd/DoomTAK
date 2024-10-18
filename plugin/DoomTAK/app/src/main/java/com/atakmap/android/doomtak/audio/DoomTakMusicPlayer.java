@@ -23,7 +23,7 @@ public class DoomTakMusicPlayer implements Closeable {
     private Receiver midiReceiver; // To receive MIDI messages
     private SoftSynthesizer synth;
     private Handler musicHandler = new Handler(Looper.getMainLooper());
-    private static final int DOOM_MIDI_RATE = 70;
+    private static final int DOOM_MIDI_RATE = 140;
     private boolean isPlaying = false;
 
     // Native method to tick MIDI and return message

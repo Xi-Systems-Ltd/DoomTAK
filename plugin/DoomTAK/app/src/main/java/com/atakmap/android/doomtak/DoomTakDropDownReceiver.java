@@ -192,9 +192,6 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
                 // Set the renderer to the native layer
                 glSurfaceView.setRenderer(new DoomTakGLRenderer(pluginContext));
 
-                doomTakSoundPlayer.start();
-                doomTakMusicPlayer.startMusic();
-
                 initialised = true;
             }
 
@@ -210,9 +207,16 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
 
     @Override
     public void onDropDownVisible(boolean v) {
-        gyroMouseListener.start();
-        doomTakSoundPlayer.start();
-        doomTakMusicPlayer.startMusic();
+        if (v) {
+            gyroMouseListener.start();
+            doomTakSoundPlayer.start();
+            doomTakMusicPlayer.startMusic();
+        } else {
+            gyroMouseListener.stop();
+            doomTakSoundPlayer.stop();
+            doomTakMusicPlayer.stopMusic();
+            pauseGame();
+        }
     }
 
     @Override
@@ -221,9 +225,5 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
 
     @Override
     public void onDropDownClose() {
-        gyroMouseListener.stop();
-        doomTakSoundPlayer.stop();
-        doomTakMusicPlayer.stopMusic();
-        pauseGame();
     }
 }
