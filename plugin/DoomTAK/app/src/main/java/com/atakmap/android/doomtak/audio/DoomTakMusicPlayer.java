@@ -23,7 +23,7 @@ public class DoomTakMusicPlayer implements Closeable {
     private Receiver midiReceiver; // To receive MIDI messages
     private SoftSynthesizer synth;
     private Handler musicHandler = new Handler(Looper.getMainLooper());
-    private static final int DOOM_MIDI_RATE = 1400; // 140 ticks per second
+    private static final int DOOM_MIDI_RATE = 70;
     private boolean isPlaying = false;
 
     // Native method to tick MIDI and return message
@@ -38,7 +38,7 @@ public class DoomTakMusicPlayer implements Closeable {
     // Set up the SoftSynthesizer with the SC-55 soundfont
     private void setupSynthesizer(Context context) {
         try {
-            SF2Soundbank sf = new SF2Soundbank(context.getAssets().open("doomsf.sf2"));
+            SF2Soundbank sf = new SF2Soundbank(context.getAssets().open("sc55.sf2"));
             synth = new SoftSynthesizer();
             synth.open();
             synth.loadAllInstruments(sf);
