@@ -221,6 +221,8 @@ void doom_mouse_move(int delta_x, int delta_y);
 void doom_joy_button_down(doom_joy_button_t button);
 void doom_joy_button_up(doom_joy_button_t button);
 void doom_joystick(int x, int y);
+void doom_pause_game();
+void doom_quit_game();
 
 
 #ifdef __cplusplus

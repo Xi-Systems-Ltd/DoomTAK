@@ -14,6 +14,7 @@
 #include "m_argv.h"
 #include "m_misc.h"
 #include "doomtak.h"
+#include "doomstat.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -712,4 +713,12 @@ void doom_joystick(int x, int y)
     event.data2 = x;
     event.data3 = y;
     D_PostEvent(&event);
+}
+
+void doom_pause_game() {
+    paused = true;
+}
+
+void doom_quit_game() {
+    I_Quit();
 }

@@ -82,6 +82,18 @@ Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joystick(
     doom_joystick(x, y);
 }
 
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_pauseGame(
+        JNIEnv *env, jobject obj) {
+    doom_pause_game();
+}
+
+JNIEXPORT void JNICALL
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_quitGame(
+        JNIEnv *env, jobject obj) {
+    doom_quit_game();
+}
+
 JNIEXPORT jshortArray JNICALL
 Java_com_atakmap_android_doomtak_audio_DoomTakSoundPlayer_getSoundBuffer(
         JNIEnv *env, jobject obj, jint length) {

@@ -45,6 +45,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final GyroMouseListener gyroMouseListener;
     private final DoomTakSoundPlayer doomTakSoundPlayer = new DoomTakSoundPlayer();
     private final DoomTakMusicPlayer doomTakMusicPlayer;
+    private boolean initialised = false;
 
     public native void mouseMove(int deltaX, int deltaY);
 
@@ -57,6 +58,10 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     public native void joyButtonUp(int button);
 
     public native void joystick(int x, int y);
+
+    public native void pauseGame();
+
+    public native void quitGame();
 
     @SuppressLint("ClickableViewAccessibility")
     public DoomTakDropDownReceiver(final MapView mapView,
@@ -166,6 +171,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         doomTakSoundPlayer.stop();
         doomTakMusicPlayer.stopMusic();
         doomTakMusicPlayer.close();
+        quitGame();
     }
 
     /**************************** INHERITED METHODS *****************************/
@@ -178,15 +184,19 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
             return;
 
         if (action.equals(SHOW_PLUGIN)) {
-            // Initialize the GLSurfaceView
-            glSurfaceView = dropdownView.findViewById(R.id.opengl_surface_view);
-            glSurfaceView.setEGLContextClientVersion(2); // Set OpenGL ES 2.0 context
+            if (!initialised) {
+                // Initialize the GLSurfaceView
+                glSurfaceView = dropdownView.findViewById(R.id.opengl_surface_view);
+                glSurfaceView.setEGLContextClientVersion(2); // Set OpenGL ES 2.0 context
 
-            // Set the renderer to the native layer
-            glSurfaceView.setRenderer(new DoomTakGLRenderer(pluginContext));
+                // Set the renderer to the native layer
+                glSurfaceView.setRenderer(new DoomTakGLRenderer(pluginContext));
 
-            doomTakSoundPlayer.start();
-            doomTakMusicPlayer.startMusic();
+                doomTakSoundPlayer.start();
+                doomTakMusicPlayer.startMusic();
+
+                initialised = true;
+            }
 
             Log.d(TAG, "showing plugin drop down");
             showDropDown(dropdownView, HALF_WIDTH, FULL_HEIGHT, FULL_WIDTH,
@@ -201,6 +211,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     @Override
     public void onDropDownVisible(boolean v) {
         gyroMouseListener.start();
+        doomTakSoundPlayer.start();
         doomTakMusicPlayer.startMusic();
     }
 
@@ -211,6 +222,8 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     @Override
     public void onDropDownClose() {
         gyroMouseListener.stop();
+        doomTakSoundPlayer.stop();
         doomTakMusicPlayer.stopMusic();
+        pauseGame();
     }
 }
