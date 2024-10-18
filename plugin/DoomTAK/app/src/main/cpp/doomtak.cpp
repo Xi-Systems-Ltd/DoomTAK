@@ -93,4 +93,10 @@ Java_com_atakmap_android_doomtak_audio_DoomTakSoundPlayer_getSoundBuffer(
     env->SetShortArrayRegion(result, 0, length / sizeof(int16_t), soundBuffer);
     return result;
 }
+
+JNIEXPORT int JNICALL
+Java_com_atakmap_android_doomtak_audio_DoomTakMusicPlayer_tickMidi(
+        JNIEnv *env, jobject obj) {
+    return (jint) doom_tick_midi();
+}
 }

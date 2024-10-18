@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 
 import com.atak.plugins.impl.PluginLayoutInflater;
+import com.atakmap.android.doomtak.audio.DoomTakMusicPlayer;
 import com.atakmap.android.doomtak.audio.DoomTakSoundPlayer;
 import com.atakmap.android.doomtak.input.GyroMouseListener;
 import com.atakmap.android.doomtak.plugin.R;
@@ -43,6 +44,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final Button button7;
     private final GyroMouseListener gyroMouseListener;
     private final DoomTakSoundPlayer doomTakSoundPlayer = new DoomTakSoundPlayer();
+    private final DoomTakMusicPlayer doomTakMusicPlayer;
 
     public native void mouseMove(int deltaX, int deltaY);
 
@@ -119,6 +121,8 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
 
         gyroMouseListener = new GyroMouseListener(mapView.getContext(), 39.0);
         gyroMouseListener.setMouseMovementListener(this::mouseMove);
+
+        doomTakMusicPlayer = new DoomTakMusicPlayer(mapView.getContext());
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -160,6 +164,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     public void disposeImpl() {
         gyroMouseListener.stop();
         doomTakSoundPlayer.stop();
+        doomTakMusicPlayer.stopMusic();
     }
 
     /**************************** INHERITED METHODS *****************************/
@@ -180,6 +185,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
             glSurfaceView.setRenderer(new DoomTakGLRenderer(pluginContext));
 
             doomTakSoundPlayer.start();
+            doomTakMusicPlayer.startMusic();
 
             Log.d(TAG, "showing plugin drop down");
             showDropDown(dropdownView, HALF_WIDTH, FULL_HEIGHT, FULL_WIDTH,
