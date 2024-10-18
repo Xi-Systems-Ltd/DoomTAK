@@ -122,7 +122,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         gyroMouseListener = new GyroMouseListener(mapView.getContext(), 39.0);
         gyroMouseListener.setMouseMovementListener(this::mouseMove);
 
-        doomTakMusicPlayer = new DoomTakMusicPlayer(mapView.getContext());
+        doomTakMusicPlayer = new DoomTakMusicPlayer(pluginContext);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -165,6 +165,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         gyroMouseListener.stop();
         doomTakSoundPlayer.stop();
         doomTakMusicPlayer.stopMusic();
+        doomTakMusicPlayer.close();
     }
 
     /**************************** INHERITED METHODS *****************************/
@@ -200,6 +201,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     @Override
     public void onDropDownVisible(boolean v) {
         gyroMouseListener.start();
+        doomTakMusicPlayer.startMusic();
     }
 
     @Override
@@ -209,5 +211,6 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     @Override
     public void onDropDownClose() {
         gyroMouseListener.stop();
+        doomTakMusicPlayer.stopMusic();
     }
 }

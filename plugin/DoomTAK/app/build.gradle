@@ -87,6 +87,7 @@ apply plugin: 'atak-takdev-plugin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation fileTree(dir: 'libs', include: '*.aar')
 }
 
 
@@ -245,6 +246,10 @@ android {
 
     tasks.withType(JavaCompile) {
         options.compilerArgs += ["-h", "${buildDir}/generated/jni/"]
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4G"
     }
 }
 
