@@ -13,7 +13,7 @@ AAssetManager *gAssetManager = nullptr;
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_com_atakmap_android_doomtak_DoomTakGLRenderer_initNativeLayer(
+Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_initNativeLayer(
         JNIEnv *env, jobject obj, jobject assetManager) {
     gAssetManager = AAssetManager_fromJava(env, assetManager);
     // Set the HOME variable to a suitable directory
@@ -84,8 +84,8 @@ Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_joystick(
 
 JNIEXPORT void JNICALL
 Java_com_atakmap_android_doomtak_DoomTakDropDownReceiver_pauseGame(
-        JNIEnv *env, jobject obj) {
-    doom_pause_game();
+        JNIEnv *env, jobject obj, jboolean paused) {
+    doom_pause_game(paused);
 }
 
 JNIEXPORT void JNICALL

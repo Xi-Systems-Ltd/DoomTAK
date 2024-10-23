@@ -15,7 +15,6 @@ import javax.microedition.khronos.opengles.GL10;
 class DoomTakGLRenderer implements GLSurfaceView.Renderer {
 
     private static final String TAG = "DoomTakGLRenderer";
-    private final Context context;
     private final FloatBuffer vertexBuffer;
     private final FloatBuffer textureBuffer;
 
@@ -50,13 +49,10 @@ class DoomTakGLRenderer implements GLSurfaceView.Renderer {
             1.0f, 1.0f   // bottom right
     };
 
-    public native void initNativeLayer(Object assetManager);
     public native void doomUpdate();
     public native byte[] getFramebuffer(int channels);
 
-    public DoomTakGLRenderer(Context context) {
-        this.context = context;
-
+    public DoomTakGLRenderer() {
         // Allocate buffers for vertices and texture coordinates.
         ByteBuffer vb = ByteBuffer.allocateDirect(QUAD_VERTICES.length * 4);
         vb.order(ByteOrder.nativeOrder());
@@ -107,9 +103,6 @@ class DoomTakGLRenderer implements GLSurfaceView.Renderer {
         // Set texture parameters.
         GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
         GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
-
-        // Initialize the native layer (DOOM engine).
-        initNativeLayer(context.getAssets());
     }
 
     @Override

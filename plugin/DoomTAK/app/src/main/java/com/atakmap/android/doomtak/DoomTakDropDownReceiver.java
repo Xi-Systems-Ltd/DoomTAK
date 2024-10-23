@@ -32,6 +32,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final Context pluginContext;
     private GLSurfaceView glSurfaceView;
     private final JoystickView joystickView;
+    private final Button buttonFullscreen;
     private final ImageButton buttonInteract;
     private final ImageButton buttonShoot;
     private final Button escButton;
@@ -46,6 +47,9 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final DoomTakSoundPlayer doomTakSoundPlayer = new DoomTakSoundPlayer();
     private final DoomTakMusicPlayer doomTakMusicPlayer;
     private boolean initialised = false;
+    private boolean fullscreen = false;
+
+    public native void initNativeLayer(Object assetManager);
 
     public native void mouseMove(int deltaX, int deltaY);
 
@@ -59,7 +63,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
 
     public native void joystick(int x, int y);
 
-    public native void pauseGame();
+    public native void pauseGame(boolean paused);
 
     public native void quitGame();
 
@@ -82,6 +86,8 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
                 // Press "strafe" joystick button.
                 Log.d("JoystickListener", "Joystick pressed.");
                 joyButtonDown(1);
+                // Unpause game.
+                pauseGame(false);
             }
 
             @Override
@@ -98,6 +104,19 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
                 int yMovement = (int) (yPercent * 100);
                 Log.d("JoystickListener", "Joystick movement " + xMovement + ", " + yMovement + ".");
                 joystick(xMovement, yMovement);
+            }
+        });
+
+        buttonFullscreen = dropdownView.findViewById(R.id.fullscreen_button);
+        buttonFullscreen.setOnClickListener(view -> {
+            if (fullscreen) {
+                showDropDown(dropdownView, HALF_WIDTH, FULL_HEIGHT, FULL_WIDTH,
+                        HALF_HEIGHT, false, this);
+                fullscreen = false;
+            } else {
+                showDropDown(dropdownView, FULL_WIDTH, FULL_HEIGHT, FULL_WIDTH,
+                        HALF_HEIGHT, false, this);
+                fullscreen = true;
             }
         });
 
@@ -143,6 +162,8 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
                     joyButtonUp(button);
                     break;
             }
+            // Unpause game.
+            pauseGame(false);
             return false;
         };
     }
@@ -160,6 +181,8 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
                     keyUp(key);
                     break;
             }
+            // Unpause game.
+            pauseGame(false);
             return false;
         };
     }
@@ -185,12 +208,14 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
 
         if (action.equals(SHOW_PLUGIN)) {
             if (!initialised) {
+                // Initialize the native layer (DOOM engine).
+                initNativeLayer(pluginContext.getAssets());
                 // Initialize the GLSurfaceView
                 glSurfaceView = dropdownView.findViewById(R.id.opengl_surface_view);
                 glSurfaceView.setEGLContextClientVersion(2); // Set OpenGL ES 2.0 context
 
                 // Set the renderer to the native layer
-                glSurfaceView.setRenderer(new DoomTakGLRenderer(pluginContext));
+                glSurfaceView.setRenderer(new DoomTakGLRenderer());
 
                 initialised = true;
             }
@@ -215,7 +240,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
             gyroMouseListener.stop();
             doomTakSoundPlayer.stop();
             doomTakMusicPlayer.stopMusic();
-            pauseGame();
+            pauseGame(true);
         }
     }
 

@@ -715,8 +715,8 @@ void doom_joystick(int x, int y)
     D_PostEvent(&event);
 }
 
-void doom_pause_game() {
-    paused = true;
+void doom_pause_game(int pause_game) {
+    paused = pause_game;
 }
 
 void doom_quit_game() {
