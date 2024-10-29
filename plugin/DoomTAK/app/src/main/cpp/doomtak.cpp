@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <android/asset_manager.h>
 #include <android/asset_manager_jni.h>
-#include "com_atakmap_android_doomtak_DoomTakGLRenderer.h"
 #include "DOOM.h"
 #include "doomdef.h"
 #include "logger.h"

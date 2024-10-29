@@ -1,0 +1,142 @@
+# This is a basic workflow to help you get started with Actions.
+
+name: Build ATAK Plugin Civ Debug
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push of a version tag.
+  push:
+    tags:
+      - 'v*.*.*'
+
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+jobs:
+  build:
+    # The type of runner that the job will run on.
+    runs-on: windows-latest
+    env:
+      filepath: bob
+    name: build-project
+
+    # ATAK versions to build for.
+    strategy:
+      matrix:
+        atak_version: [ '4.10.0', '5.0.0', '5.1.0', '5.2.0' ]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job.
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it.
+      - uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 11
+
+      - name: Extract Version Number
+        run: |
+          $version = $env:GITHUB_REF_NAME -replace '^v', ''
+          echo "plugin_version=$version" >> $env:GITHUB_ENV
+        shell: pwsh
+
+      - name: Build APK
+        working-directory: plugin\DoomTAK
+        run: .\gradlew.bat app:assembleCivDebug -Patak_version="${{ matrix.atak_version }}" -Pplugin_version="${{ env.plugin_version }}"
+
+      - name: Rename APK File
+        id: rename-apk
+        shell: pwsh
+        run: |
+          $atakVersion = "${{ matrix.atak_version }}"
+          $apkPath = Get-ChildItem -Path "plugin\DoomTAK\app\build\outputs\apk\civ\debug" -Filter *$atakVersion*.apk | Select-Object -First 1 | ForEach-Object { $_.FullName }
+          
+          # Generate new filename.
+          $newFileName = "${{ github.event.repository.name }}-${{ github.ref_name }}-$atakVersion.apk"
+          
+          # Rename the APK.
+          Rename-Item -Path $apkPath -NewName $newFileName
+
+      - name: Upload APK as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-artifacts-${{ matrix.atak_version }}
+          path: plugin\DoomTAK\app\build\outputs\apk\civ\debug\*.apk
+
+  release:
+    # The type of runner that the job will run on.
+    runs-on: windows-latest
+    needs: build
+    steps:
+      # Download APKs.
+      - name: Download APK Artifacts for version 4.10.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-4.10.0
+      - name: Download APK Artifacts for version 5.0.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.0.0
+      - name: Download APK Artifacts for version 5.1.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.1.0
+      - name: Download APK Artifacts for version 5.2.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.2.0
+      - name: List downloaded APK files
+        run: dir
+
+      - name: Create Github Release
+        id: create-new-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: ${{ github.ref_name }}
+
+      # Upload APKs.
+      - name: Upload APK for version 4.10.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-4.10.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-4.10.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.0.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.0.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.0.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.1.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.1.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.1.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.2.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.2.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.2.0.apk
+          asset_content_type: application/vnd.android.package-archive
