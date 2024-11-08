@@ -317,10 +317,7 @@ enum
 {
     newgame = 0,
     options,
-    loadgame,
-    savegame,
     readthis,
-    quitdoom,
     main_end
 } main_e;
 
@@ -328,11 +325,8 @@ menuitem_t MainMenu[] =
 {
     {1,"M_NGAME",M_NewGame,'n'},
     {1,"M_OPTION",M_Options,'o'},
-    {1,"M_LOADG",M_LoadGame,'l'},
-    {1,"M_SAVEG",M_SaveGame,'s'},
     // Another hickup with Special edition.
-    {1,"M_RDTHIS",M_ReadThis,'r'},
-    {1,"M_QUITG",M_QuitDOOM,'q'}
+    {1,"M_RDTHIS",M_ReadThis,'r'}
 };
 
 menu_t  MainDef =
@@ -2211,7 +2205,7 @@ void M_Init(void)
             // This is used because DOOM 2 had only one HELP
             //  page. I use CREDIT as second page now, but
             //  kept this hack for educational purposes.
-            MainMenu[readthis] = MainMenu[quitdoom];
+            MainMenu[readthis] = MainMenu[options];
             MainDef.numitems--;
             MainDef.y += 8;
             NewDef.prevMenu = &MainDef;
