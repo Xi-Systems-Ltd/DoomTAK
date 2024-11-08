@@ -6,12 +6,6 @@ import gov.tak.api.plugin.IServiceController;
 import com.atak.plugins.impl.PluginContextProvider;
 import com.atakmap.android.doomtak.DoomTakMapComponent;
 
-
-/**
- *
- * 
- *
- */
 public class DoomTakLifecycle extends AbstractPlugin {
 
    private final static String TAG = "DoomTakLifecycle";
