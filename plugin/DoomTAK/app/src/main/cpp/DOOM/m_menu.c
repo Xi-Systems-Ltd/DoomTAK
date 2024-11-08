@@ -1194,10 +1194,7 @@ void M_NewGame(int choice)
         return;
     }
 
-    if (gamemode == commercial)
-        M_SetupNextMenu(&NewDef);
-    else
-        M_SetupNextMenu(&EpiDef);
+    M_SetupNextMenu(&NewDef);
 }
 
 
