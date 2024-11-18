@@ -4,7 +4,7 @@
 
     <application 
         android:allowBackup="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/doom_logo_white_48"
         android:label="@string/app_name"
         android:description="@string/app_desc"
         android:theme="@style/AppTheme" >
