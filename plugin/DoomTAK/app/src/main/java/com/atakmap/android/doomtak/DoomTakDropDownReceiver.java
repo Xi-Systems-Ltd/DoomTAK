@@ -41,8 +41,6 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
     private final Button button3;
     private final Button button4;
     private final Button button5;
-    private final Button button6;
-    private final Button button7;
     private final GyroMouseListener gyroMouseListener;
     private final DoomTakSoundPlayer doomTakSoundPlayer = new DoomTakSoundPlayer();
     private final DoomTakMusicPlayer doomTakMusicPlayer;
@@ -125,7 +123,7 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         buttonShoot = dropdownView.findViewById(R.id.buttonShoot);
         buttonShoot.setOnTouchListener(getJoyButtonTouchListener(0));
 
-        escButton = dropdownView.findViewById(R.id.esc_button);
+        escButton = dropdownView.findViewById(R.id.menu_button);
         escButton.setOnTouchListener(getKeyTouchListener(27));
 
         button1 = dropdownView.findViewById(R.id.button1);
@@ -138,10 +136,6 @@ public class DoomTakDropDownReceiver extends DropDownReceiver implements
         button4.setOnTouchListener(getKeyTouchListener('4'));
         button5 = dropdownView.findViewById(R.id.button5);
         button5.setOnTouchListener(getKeyTouchListener('5'));
-        button6 = dropdownView.findViewById(R.id.button6);
-        button6.setOnTouchListener(getKeyTouchListener('6'));
-        button7 = dropdownView.findViewById(R.id.button7);
-        button7.setOnTouchListener(getKeyTouchListener('7'));
 
         gyroMouseListener = new GyroMouseListener(mapView.getContext(), 39.0);
         gyroMouseListener.setMouseMovementListener(this::mouseMove);
