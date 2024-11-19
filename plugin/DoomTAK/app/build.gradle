@@ -8,7 +8,7 @@
 
 buildscript {
 
-    ext.PLUGIN_VERSION = project.hasProperty('plugin_version') ? project.plugin_version : "1.0.0"
+    ext.PLUGIN_VERSION = project.hasProperty('plugin_version') ? project.plugin_version : "1.1.0"
     ext.ATAK_VERSION = project.hasProperty('atak_version') ? project.atak_version : "5.2.0"
 
     def takdevVersion = '3.+'
