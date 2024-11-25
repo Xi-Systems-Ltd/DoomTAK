@@ -19,7 +19,7 @@ public class DoomTakTool extends AbstractPluginTool implements Disposable {
         super(context,
                 context.getString(R.string.app_name),
                 context.getString(R.string.app_name),
-                context.getResources().getDrawable(R.drawable.doom_logo_white_48),
+                context.getResources().getDrawable(R.drawable.xi_icon),
                 DoomTakDropDownReceiver.SHOW_PLUGIN);
     }
 
