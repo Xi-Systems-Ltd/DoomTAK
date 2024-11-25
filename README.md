@@ -1,7 +1,7 @@
 DoomTAK
 ===
 
-Ever find yourself out in the field with nothing better to do? Need a way to get those violent urges
+Ever find yourself out in the field with nothing better to do? Need a way to get those urges for a mid 90's FPS
 out of your system without compromising your tactical awareness? Try DoomTAK! It's Doom, but in
 ATAK!
 
