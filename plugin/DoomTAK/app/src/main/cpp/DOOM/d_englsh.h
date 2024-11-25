@@ -379,9 +379,9 @@
 "you're stuck on The Shores of Hell.\n"\
 "The only way out is through.\n"\
 "\n"\
-"To continue the DOOM experience, play\n"\
-"The Shores of Hell and its amazing\n"\
-"sequel, Inferno!\n"
+"This is only the demo, but honestly\n"\
+"I didn't expect anyone to actually get\n"\
+"this far, so great job! - Pete, Xi Systems\n"
 
 
 #define E2TEXT \
