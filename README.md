@@ -20,6 +20,18 @@ Features
   permissions and such. Combined with the fact that the demo only has the first chapter of Doom,
   this seemed like more trouble than it was worth.
 
+Installation
+===
+
+- Install ATAK onto your phone if you don't have it already, taking note of the version. The
+  simplest way to acquire it is from
+  the [Google Play Store](https://play.google.com/store/apps/details?id=com.atakmap.app.civ).
+- Download the DoomTAK APK from
+  the [latest release](https://github.com/Xi-Systems-Ltd/DoomTAK/releases/latest) that corresponds
+  to your version of ATAK (e.g. 5.2.0), then open it on your phone to install the plugin. If you
+  acquired ATAK from Google Play Store then you should download the "civ-release" version. The
+  "civ-debug" versions are for the developer build of ATAK found in the SDK.
+
 Acknowledgements
 ===
 
