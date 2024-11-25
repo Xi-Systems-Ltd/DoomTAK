@@ -5,7 +5,7 @@ Ever find yourself out in the field with nothing better to do? Need a way to get
 out of your system without compromising your tactical awareness? Try DoomTAK! It's Doom, but in
 ATAK!
 
-Get in contact with Xi Systems for your ATAK Plugin and other software requirements. contact@xisystems.co.uk
+Get in contact with Xi Systems for your ATAK Plugin and other software requirements. contact@xisystems.co.uk or read a little on the process here; www.xisystems.co.uk/blog/doom-for-atak
 
 Features
 ===
