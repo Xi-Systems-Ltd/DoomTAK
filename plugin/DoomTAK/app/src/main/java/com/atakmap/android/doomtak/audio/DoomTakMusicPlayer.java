@@ -32,7 +32,6 @@ public class DoomTakMusicPlayer implements Closeable {
     public DoomTakMusicPlayer(Context context) {
         midiManager = (MidiManager) context.getSystemService(Context.MIDI_SERVICE);
         setupSynthesizer(context);
-        discoverMidiDevices();
     }
 
     // Set up the SoftSynthesizer with the SC-55 soundfont
@@ -45,14 +44,6 @@ public class DoomTakMusicPlayer implements Closeable {
             midiReceiver = synth.getReceiver();
         } catch (IOException | MidiUnavailableException e) {
             Log.e("DoomTakMusicPlayer", e.toString());
-        }
-    }
-
-    // Discover MIDI devices (optional for receiving messages)
-    private void discoverMidiDevices() {
-        MidiDeviceInfo[] infos = midiManager.getDevices();
-        for (MidiDeviceInfo info : infos) {
-            // You can add any necessary MIDI device connection logic here
         }
     }
 

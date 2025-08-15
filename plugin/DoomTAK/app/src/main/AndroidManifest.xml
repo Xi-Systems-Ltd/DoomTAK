@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.atakmap.android.doomtak.plugin" >
+    tools:ignore="GoogleAppIndexingWarning">
 
-    <application 
+    <application
         android:allowBackup="false"
         android:icon="@drawable/xi_icon"
         android:label="@string/app_name"
@@ -11,15 +11,17 @@
         <meta-data android:name="plugin-api" android:value="${atakApiVersion}"/>
         <meta-data android:name="app_desc" android:value="@string/app_desc"/>
 
-  
-       <!-- allow for plugin discovery -->
-       <activity android:name="com.atakmap.app.component"
-           android:exported="true"
-           tools:ignore="MissingClass">
-           <intent-filter android:label="@string/app_name">
-              <action android:name="com.atakmap.app.component" />
-           </intent-filter>
-       </activity>
+
+        <!-- This fictitious activity entry allow for ATAK 4.6.0.2 and newer to perform
+             plugin discovery  android devices.  If this is removed, the plugin will
+             not be able to be discovered or loaded.  -->
+        <activity android:name="com.atakmap.app.component"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="com.atakmap.app.component" />
+            </intent-filter>
+        </activity>
 
 
     </application>

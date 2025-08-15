@@ -1,10 +1,15 @@
+######################################################################
+## Skip down to the 'User Section'
+## Messing with any items in the 'System Section' will void the warranty
+######################################################################
 
-# Do not strip any method/class that is annotated with @DontObfuscate
--keep,allowobfuscation @interface gov.tak.api.annotation.DontObfuscate
--keep @gov.tak.api.annotation.DontObfuscate class * {*;}
--keepclassmembers class * {
-    @gov.tak.api.annotation.DontObfuscate *;
-}
+
+######################################################################
+######################################################################
+## System Section
+######################################################################
+######################################################################
+
 
 -dontskipnonpubliclibraryclasses
 -dontshrink
@@ -16,10 +21,9 @@
 -keepattributes SourceFile,LineNumberTable
 
 -applymapping <atak.proguard.mapping>
--repackageclasses atakplugin.helloworld
 
 -keepattributes *Annotation*
--keepattributes Signature
+-keepattributes Signature, InnerClasses
 
 
 -keep class * implements android.os.Parcelable {
@@ -61,6 +65,32 @@
 -keep class * extends com.atak.plugins.impl.AbstractPluginTool {
 }
 
--keep class org.simpleframework.** {*;}
--keep class com.atak.maps.daco.xml.** {*;}
+# overcome an existing bug in the gradle subsystem (3.5.x)
+-keep class module-info
+
+-keep,allowobfuscation @interface gov.tak.api.annotation.DontObfuscate
+
+# Do not strip any method/class that is annotated with @DontObfuscate
+-keep @gov.tak.api.annotation.DontObfuscate class * {*;}
+-keepclassmembers class * {
+    @gov.tak.api.annotation.DontObfuscate *;
+}
+
+
+######################################################################
+## Messing with any settings above this line will void the Warranty
+######################################################################
+
+
+
+######################################################################
+######################################################################
+## User Section
+######################################################################
+######################################################################
+
+######################################################################
+## below you can add any rules specific to your plugin limited to
+## dontwarn and keep directives
+######################################################################
 
