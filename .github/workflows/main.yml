@@ -29,7 +29,7 @@ jobs:
     # ATAK versions to build for.
     strategy:
       matrix:
-        atak_version: [ '4.10.0', '5.0.0', '5.1.0', '5.2.0' ]
+        atak_version: [ '4.10.0', '5.0.0', '5.1.0', '5.2.0', '5.3.0', '5.4.0', '5.5.0' ]
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
@@ -91,6 +91,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: apk-artifacts-5.2.0
+      - name: Download APK Artifacts for version 5.3.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.3.0
+      - name: Download APK Artifacts for version 5.4.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.4.0
+      - name: Download APK Artifacts for version 5.5.0
+        uses: actions/download-artifact@v4
+        with:
+          name: apk-artifacts-5.5.0
       - name: List downloaded APK files
         run: dir
 
@@ -139,4 +151,31 @@ jobs:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
           asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.2.0.apk
           asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.2.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.3.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.3.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.3.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.4.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.4.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.4.0.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload APK for version 5.5.0
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+          asset_path: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.5.0.apk
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}-5.5.0.apk
           asset_content_type: application/vnd.android.package-archive

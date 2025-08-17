@@ -1,11 +1,13 @@
 
-// As recommended by the posts on https://github.com/mockk/mockk/issues/281 so that the Android minimum SDK would not
-// need to be bumped to Android 26
-configurations.all {
-    resolutionStrategy {
-        force("org.objenesis:objenesis:2.6")
-    }
+ext.jacocoVersion = '0.8.9'
+
+buildscript.dependencies { 
+    classpath "org.jacoco:org.jacoco.core:${jacocoVersion}"
 }
+
+apply plugin: 'jacoco'
+
+android.buildTypes.debug.testCoverageEnabled (project.hasProperty('coverage'))
 
 configurations {
     androidTestCompileOnly.extendsFrom compileOnly
@@ -30,10 +32,6 @@ dependencies {
     // WARNING: when including dependencies, take care they are not already included in the ATAK apk. Dependencies included in the instrumentation APK and the ATAK APK may cause errors. In my case it caused the Activity::onStart command to hang because I included appcompat and support in the instrumentation APK. The solution for this is to use CompileOnly
 
 
-    // Include a unit test dependency that breaks AndroidTests if it's included in them, and so can't be included from build.gradle.
-    testImplementation group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.9'
-    testImplementation group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.9'
-
     // If the plugin test harness is available as a submodule, load that. Otherwise we assume
     // the plugin is loading the dependency from Maven itself.
     if (new File("$rootProject.projectDir/atakplugintests").exists()) {
@@ -48,18 +46,17 @@ dependencies {
         androidTestImplementation 'androidx.lifecycle:lifecycle-runtime:2.6.1'
         androidTestImplementation 'androidx.lifecycle:lifecycle-process:2.6.1'
 
-
-        androidTestImplementation 'androidx.test:runner:1.5.2'
-        androidTestImplementation 'androidx.test:rules:1.5.0'
-        androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+        androidTestImplementation 'androidx.test:orchestrator:1.5.1'
+        androidTestImplementation 'androidx.test:runner:1.6.2' 
+        androidTestImplementation 'androidx.test:rules:1.6.1'
+        androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
         androidTestImplementation 'androidx.test.espresso:espresso-intents:3.6.1'
-        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-        androidTestImplementation 'org.mockito:mockito-core:3.12.4'
-
-        androidTestImplementation group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.9'
-        androidTestImplementation group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.9'
-
+        androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+           
+        androidTestImplementation "org.mockito:mockito-core:5.15.2"
+        
+        androidTestImplementation 'androidx.appcompat:appcompat:1.7.0'
     }
 
     // This is an easy way to give androidTest and test access to the ATAK main.jar without needing
@@ -68,7 +65,8 @@ dependencies {
     // be included this way? If so we should switch to a modified block from ATAKVersions.gradle.
     configurations {
         androidTestCompileOnly.extendsFrom compileOnly
-        testImplementation.extendsFrom compileOnly
+        testImplementation.extendsFrom androidTestImplementation
+
     }
 
 }
@@ -92,4 +90,57 @@ if (new File("$rootProject.projectDir/atakplugintests").exists()) {
 else {
     apply from: "$rootProject.projectDir/espresso/modApkTask.gradle"
     println("using a local version of the atakplugintests gradle plugin")
+}
+
+
+
+// Test Harness using jacoco
+// Note:
+//    When compiled in debug mode, jacoco inserts itself into the
+//    the ATAKApplication class even in the case where the test
+//    instrumentation is not run.    This does not seem to be the
+//    case with the release builds.
+//    The source code for jacoco is not under positive control and
+//
+//    can be read more about here: https://www.eclemma.org/jacoco/
+//    Exception observed on startup -
+//    System.err: java.io.FileNotFoundException: /jacoco.exec (Read-only file system)
+//        --- snip ---
+//       at org.jacoco.agent.rt.internal_8ff85ea.Offline.getProbes(Offline.java:51)
+//       at com.atakmap.app.ATAKApplication.$jacocoInit(Unknown Source:13)
+//        --- snip ---
+//
+////////////////////////////////////////////////////////////////////////////////
+
+jacoco {
+    toolVersion = "$jacocoVersion"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+android.applicationVariants.all { variant ->
+    task "create${variant.name.capitalize()}JacocoTestReport" (type: JacocoReport, dependsOn: ["test${variant.name.capitalize()}UnitTest", "create${variant.name.capitalize()}CoverageReport"])  {
+
+       reports {
+            xml.required = true
+            html.required = true
+        }
+
+        def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*', 'androidx/**/*.*' , 'kotlin/**/*.*' ]
+        def debugTree = fileTree(dir:"${project.projectDir}/build/intermediates/javac/${variant.name}/classes", excludes: fileFilter)
+        def mainSrc = "$project.projectDir/src/main/java"
+
+        sourceDirectories.setFrom(files([mainSrc]))
+        classDirectories.setFrom(files([debugTree]))
+
+        executionData.setFrom(fileTree(dir: project.buildDir, includes: [
+                "outputs/unit_test_code_coverage/${variant.name}UnitTest/test${variant.name.capitalize()}UnitTest.exec",
+                "outputs/code_coverage/${variant.name}AndroidTest/connected/**/*.ec"
+        ]))
+
+        description = "Generates unified code coverage report for " + variant.name + " using Jacoco"
+    }
 }
